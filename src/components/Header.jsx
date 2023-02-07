@@ -19,7 +19,7 @@ function Header() {
                 <a className='text-white font-sans' href='tel:+44 7442005972'><span className='text-white font-sans'>Hotline</span> +44 7442005972</a>
             </div>
         </div>
-        <div className='flex  mx-auto flex-col space-y-2 md:flex-row items-center justify-between bg-slate-800 py-2 pt-3 px-3 md:px-12 lg:px-16'>
+        <div className='flex  mx-auto flex-col space-y-2 md:flex-row items-center justify-between bg-slate-800 py-2 pt-3 px-3 md:!px-8 lg:!px-16'>
             <div className='px-4 flex items-center '>
                 <Link to="/" className='text-white text-2xl'>
                     <span className='text-white font-sans text-4xl font-bold'>E</span>shoppers
@@ -90,9 +90,9 @@ function Header() {
                     <span className="text-white me-3 text-sm leading-[18px] font-normal tracking-wider uppercase">Shop Categories</span>
                 </button>
                 <ul className="dropdown-menu bg-slate-700 w-[100%] transform ease-out duration-50">
-                    <li><a className="dropdown-item text-white p-3 mb-1 border-b-2 border-[#3b4149] hover:bg-transparent hover:text-[#febd69]" href="#">Action</a></li>
-                    <li><a className="dropdown-item  text-white p-3 mb-1 border-b-2 border-[#3b4149] hover:bg-transparent hover:text-[#febd69]" href="#">Another action</a></li>
-                    <li><a className="dropdown-item  text-white p-3 mb-1 border-b-2 border-[#3b4149] hover:bg-transparent hover:text-[#febd69]" href="#">Something else here</a></li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="#">Action</a></li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="#">Another action</a></li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="#">Something else here</a></li>
                 </ul>
             </div>
             <div className='flex items-center flex-row gap-x-4'>
@@ -100,7 +100,6 @@ function Header() {
                 <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Our Store</NavLink>
                 <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Blogs</NavLink>
                 <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Contact Us</NavLink>
-
             </div>
         </div>
     </div>
