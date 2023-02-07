@@ -1,10 +1,12 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import compare from '../images/compare.svg'
 import wishlist from '../images/wishlist.svg'
 import user from '../images/user.svg' 
 import cart from '../images/cart.svg'
+import menu from '../images/menu.svg'
+
 
 function Header() {
   return (
@@ -17,7 +19,7 @@ function Header() {
                 <a className='text-white font-sans' href='tel:+44 7442005972'><span className='text-white font-sans'>Hotline</span> +44 7442005972</a>
             </div>
         </div>
-        <div className='flex mx-auto flex-col space-y-2 md:flex-row items-center justify-between bg-slate-800 py-4 px-3 md:px-12 lg:px-16'>
+        <div className='flex  mx-auto flex-col space-y-2 md:flex-row items-center justify-between bg-slate-800 py-2 pt-3 px-3 md:px-12 lg:px-16'>
             <div className='px-4 flex items-center '>
                 <Link to="/" className='text-white text-2xl'>
                     <span className='text-white font-sans text-4xl font-bold'>E</span>shoppers
@@ -74,6 +76,32 @@ function Header() {
                 </div>
             </div>
             
+        </div>
+        <div className='flex flex-col md:flex-row md:items-center space-x-8 bg-slate-700 py-3 px-6 md:px-12'>
+            <div className="dropdown">
+                <button 
+                    className="btn flex items-center bg-transparent border-none space-x-2 btn-secondary dropdown-toggle" 
+                    type="button" 
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false">
+                    <img 
+                        src={menu}
+                        className="h-6 w-6"                    />    
+                    <span className="text-white me-3 text-sm leading-[18px] font-normal tracking-wider uppercase">Shop Categories</span>
+                </button>
+                <ul className="dropdown-menu bg-slate-700 w-[100%] transform ease-out duration-50">
+                    <li><a className="dropdown-item text-white p-3 mb-1 border-b-2 border-[#3b4149] hover:bg-transparent hover:text-[#febd69]" href="#">Action</a></li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 border-b-2 border-[#3b4149] hover:bg-transparent hover:text-[#febd69]" href="#">Another action</a></li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 border-b-2 border-[#3b4149] hover:bg-transparent hover:text-[#febd69]" href="#">Something else here</a></li>
+                </ul>
+            </div>
+            <div className='flex items-center flex-row gap-x-4'>
+                <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Home</NavLink>
+                <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Our Store</NavLink>
+                <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Blogs</NavLink>
+                <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Contact Us</NavLink>
+
+            </div>
         </div>
     </div>
   )
