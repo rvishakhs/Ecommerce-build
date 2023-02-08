@@ -1,12 +1,16 @@
 import React from 'react'
-import { FaRegPaperPlane } from "react-icons/fa";
+import { FaRegPaperPlane, FaInstagram, FaFacebookSquare, FaGithub , FaLinkedin } from "react-icons/fa";
+
+
+const informationlinks = ["Privacy Policy", "Refund Policy", "Shipping Policy", "Terms & Conditions", "Blogs"]
+const Accountlinks = ["Search", "About Us", "FAQ", "Contact", "Size Chart"]
 
 function Footer() {
   return (
-    <div className='bg-slate-700 fixed bottom-0 w-full  flex flex-col justify-between'>
+    <div className='bg-slate-700 fixed bottom-0  overflow-y-hidden w-full  flex flex-col justify-between'>
         {/* Footer First Section Newsletter */}
-        <div className='py-3 px-4 md:!px-16 lg:!px-24 flex w-full mx-auto border-b border-gray-400 '>
-            <div className='flex space-x-4 items-center mx-auto'>
+        <div className='py-4 px-4 md:!px-16 lg:!px-24 flex flex-col lg:flex-row w-full mx-auto border-b border-gray-400 '>
+            <div className='flex space-x-4 py-2 items-center mx-auto'>
                 <FaRegPaperPlane className='w-7 h-7 text-white' />
                 <p className='text-white text-lg font-semibold font-sans'>Sign Up For Newsletter</p>
             </div>
@@ -26,9 +30,9 @@ function Footer() {
             
         </div>
         {/* Footer */}
-        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 w-full'>
-            <div className='flex flex-col py-3 col-span-2  max-w-[300px]'>
-                <p className='font-bold text-lg text-white '>Contact US</p>
+        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 w-full border-b border-gray-400'>
+            <div className='flex flex-col py-3 col-span-2 px-2 mx-auto   max-w-[580px]'>
+                <p className='font-bold text-lg text-white mb-3 '>Contact US</p>
                 <p className='font-normal text-white'>
                     Eshoppers <br/>
                     E15 4AZ Devenoy Road <br/>
@@ -36,14 +40,48 @@ function Footer() {
                     +44 7442005972 <br/>
                     rvishakhs@gmail.com
                 </p>
-                <div className='flex flex-row space-x-2'>
-                    <div className='w-4 h-4 p-2 bg-gray-500 rounded-full'>
-                        
+                <div className='flex flex-row  space-x-2 mt-3'>
+                    <div className='w-9 h-9 p-1 flex items-center cursor-pointer justify-center bg-gray-500 rounded-full'>
+                        <FaInstagram className='w-5 h-5 text-white'/>
+                    </div>
+                    <div className='w-9 h-9 p-1 flex items-center cursor-pointer justify-center bg-gray-500 rounded-full'>
+                        <FaFacebookSquare className='w-5 h-5 text-white'/>
+                    </div>
+                    <div className='w-9 h-9 p-1 flex items-center cursor-pointer justify-center bg-gray-500 rounded-full'>
+                        <FaGithub className='w-5 h-5 text-white'/>
+                    </div>
+                    <div className='w-9 h-9 p-1 flex items-center cursor-pointer justify-center bg-gray-500 rounded-full'>
+                        <FaLinkedin className='w-5 h-5 text-white'/>
                     </div>
                 </div>
             </div>
-            <div></div>
-            <div></div>
+            <div className='flex flex-col py-3 col-span-1 px-4  max-w-[280px]'>
+               <p className='font-bold text-lg text-white '>Information Links</p>
+                {informationlinks.map((item) => (
+                    <div key={item}className='py-2 '>
+                        <p className='text-gray-400 font-normal font-sans cursor-pointer'>{item}</p>
+                    </div>
+                ))}
+
+            </div>
+            <div className='flex flex-col py-3 col-span-1 px-4  max-w-[280px]'>
+               <p className='font-bold text-lg text-white '>Account</p>
+                {Accountlinks.map((item) => (
+                    <div key={item}className='py-2 '>
+                        <p className='text-gray-400 font-normal font-sans cursor-pointer'>{item}</p>
+                    </div>
+                ))}
+
+            </div>
+            <div className='flex flex-col py-3 col-span-1 px-4  max-w-[280px]'>
+               <p className='font-bold text-lg text-white '>Quick Links</p>
+                {Accountlinks.map((item) => (
+                    <div key={item}className='py-2 '>
+                        <p className='text-gray-400 font-normal font-sans cursor-pointer'>{item}</p>
+                    </div>
+                ))}
+
+            </div>
             <div></div>
             <div></div>
         </div>
