@@ -1,13 +1,16 @@
 import React from 'react'
 import { FaRegPaperPlane, FaInstagram, FaFacebookSquare, FaGithub , FaLinkedin } from "react-icons/fa";
+import google from "../images/playstore.png"
+import apple from "../images/apple.png"
 
 
 const informationlinks = ["Privacy Policy", "Refund Policy", "Shipping Policy", "Terms & Conditions", "Blogs"]
 const Accountlinks = ["Search", "About Us", "FAQ", "Contact", "Size Chart"]
+const Quicklinks = ["Accessories", "Laptops", "Smartphones", "Headphones", "Tablets"]
 
 function Footer() {
   return (
-    <div className='bg-slate-700 fixed bottom-0  overflow-y-hidden w-full  flex flex-col justify-between'>
+    <div className='bg-slate-700  bottom-0 fixed   w-full  flex flex-col justify-between'>
         {/* Footer First Section Newsletter */}
         <div className='py-4 px-4 md:!px-16 lg:!px-24 flex flex-col lg:flex-row w-full mx-auto border-b border-gray-400 '>
             <div className='flex space-x-4 py-2 items-center mx-auto'>
@@ -30,10 +33,10 @@ function Footer() {
             
         </div>
         {/* Footer */}
-        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 w-full border-b border-gray-400'>
+        <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 w-full border-b border-gray-400'>
             <div className='flex flex-col py-3 col-span-2 px-2 mx-auto   max-w-[580px]'>
                 <p className='font-bold text-lg text-white mb-3 '>Contact US</p>
-                <p className='font-normal text-white'>
+                <p className='font-normal text-gray-400'>
                     Eshoppers <br/>
                     E15 4AZ Devenoy Road <br/>
                     London <br/>
@@ -55,7 +58,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <div className='flex flex-col py-3 col-span-1 px-4  max-w-[280px]'>
+            <div className='flex flex-col py-3 col-span-1 px-4  max-w-[300px]'>
                <p className='font-bold text-lg text-white '>Information Links</p>
                 {informationlinks.map((item) => (
                     <div key={item}className='py-2 '>
@@ -64,7 +67,7 @@ function Footer() {
                 ))}
 
             </div>
-            <div className='flex flex-col py-3 col-span-1 px-4  max-w-[280px]'>
+            <div className='flex flex-col py-3 col-span-1 px-4  max-w-[300px]'>
                <p className='font-bold text-lg text-white '>Account</p>
                 {Accountlinks.map((item) => (
                     <div key={item}className='py-2 '>
@@ -73,16 +76,29 @@ function Footer() {
                 ))}
 
             </div>
-            <div className='flex flex-col py-3 col-span-1 px-4  max-w-[280px]'>
+            <div className='flex flex-col py-3 col-span-1 px-4  max-w-[300px]'>
                <p className='font-bold text-lg text-white '>Quick Links</p>
-                {Accountlinks.map((item) => (
+                {Quicklinks.map((item) => (
                     <div key={item}className='py-2 '>
                         <p className='text-gray-400 font-normal font-sans cursor-pointer'>{item}</p>
                     </div>
                 ))}
 
             </div>
-            <div></div>
+            <div className='flex flex-col py-3 col-span-2 px-4  max-w-[420px]'>
+                <p className='font-bold text-lg text-white '>Our App</p>
+                <p className='text-gray-400'>Download our app to get extra 15% Discount on your first order!!</p>
+                <div className='flex flex-row mt-2 space-x-2'>
+                    <img
+                        src={google}
+                        className="w-15 h-10 "
+                    />
+                    <img
+                        src={apple}
+                        className="w-15 h-10 "
+                    />
+                </div>
+            </div>
             <div></div>
         </div>
         {/* Footer Last session Copyright and payment modes */}
