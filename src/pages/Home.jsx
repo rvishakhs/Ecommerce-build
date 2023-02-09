@@ -1,8 +1,13 @@
 import React from 'react'
+import Banner from '../components/Banner'
 
 function Home() {
   return (
-    <div>This is Home page</div>
+    <div className='w-full h-screen'>
+        <div className='max-w-[1350px] mx-auto my-4'>
+            <Banner />
+        </div>
+    </div>
   )
 }
 
