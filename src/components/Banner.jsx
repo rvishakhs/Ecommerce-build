@@ -8,8 +8,8 @@ import Button from './Button'
 
 function Banner() {
   return (
-    <div className='grid grid-cols-2 md:grid-cols-4 px-4 py-4 gap-2'>
-        <div className='col-span-2 relative'>
+    <div className='flex flex-col md:flex-row  justify-between px-4 py-4 gap-2'>
+        <div className='flex w-full  relative'>
             <img 
                 src={main1}
                 className="w-[620px] h-[425px] rounded-xl object-cover"
@@ -24,11 +24,11 @@ function Banner() {
                 </div>
             </div>
         </div>
-        <div className=' flex col-span-2   md:flex-wrap gap-4'>
-            <div className='grid space-x-2 relative hover:scale-105 cursor-pointer transition duration-200 ease-in' >
+        <div className=' flex  flex-row overflow-x-auto md:flex-wrap  gap-4'>
+            <div className=' block w-full space-x-2 relative hover:scale-105 cursor-pointer   mx-auto transition duration-200 ease-in' >
                 <img 
                     src={subimg1}
-                    className=" md:w-[300px] h-[200px] rounded-xl object-cover"
+                    className=" w-[300px] h-[200px] rounded-xl object-cover"
                 />
                 <div className='absolute flex flex-col top-[8%] left-4'>
                     <h3 className='font-bold text-base text-orange-600 tracking-wide uppercase'>Best Sale</h3>
@@ -37,7 +37,7 @@ function Banner() {
                     <h4 className='font-normal text-sm'>$64.62/month</h4>
                 </div>
             </div>
-            <div className='grid relative hover:scale-105 cursor-pointer transition duration-200 ease-in' >
+            <div className='flex  w-full relative hover:scale-105 cursor-pointer mx-auto transition duration-200 ease-in' >
                 <img 
                     src={subimg2}
                     className="w-[300px] h-[200px] rounded-xl object-cover"
@@ -49,7 +49,7 @@ function Banner() {
                     <h4 className='font-normal text-sm'>styles and colors </h4>
                 </div>
             </div>
-            <div className='grid relative hover:scale-105 cursor-pointer transition duration-200 ease-in' >
+            <div className=' w-full relative hover:scale-105 cursor-pointer mx-auto transition duration-200 ease-in' >
                 <img 
                     src={subimg3}
                     className="w-[300px] h-[200px] rounded-xl object-cover"
@@ -61,7 +61,7 @@ function Banner() {
                     <h4 className='font-normal text-sm'>$49.91/mo for 12 mo*</h4>
                 </div>
             </div>
-            <div className='grid relative hover:scale-105 cursor-pointer transition duration-200 ease-in' >
+            <div className=' flex w-full relative hover:scale-105 cursor-pointer mx-auto transition duration-200 ease-in' >
                 <img 
                     src={subimg4}
                     className="w-[300px] h-[200px] rounded-xl object-cover"
