@@ -44,7 +44,7 @@ function MarqueeSection() {
                     alt="intel"
                 />
             </div>
-            <div className='mx-3 w-28'>
+            <div className='mx-4 w-28'>
                 <img 
                     src={brand6}
                     alt="LG"
