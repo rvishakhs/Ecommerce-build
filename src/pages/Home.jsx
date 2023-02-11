@@ -1,5 +1,6 @@
 import React from 'react'
 import Banner from '../components/Banner'
+import MarqueeSection from '../components/MarqueeSection'
 import Productlist from '../components/Productlist'
 import Service from '../components/Service'
 
@@ -16,6 +17,10 @@ function Home() {
             <div className='max-w-[1350px] mx-auto my-4'>
                     <Productlist />
             </div>
+            <div className='max-w-[1350px] mx-auto my-4'>
+                    <MarqueeSection />
+            </div>
+
         </div>
     </div>
   )
