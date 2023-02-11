@@ -8,7 +8,7 @@ import Button from './Button'
 
 function Banner() {
   return (
-    <div className='grid grid-cols-2 md:grid-cols-4 px-4 py-4 gap-2'>
+    <div className='grid grid-cols-1 md:grid-cols-4 px-4 py-4 gap-2'>
         <div className=' col-span-2 lg:col-span-2 md:col-span-4 relative'>
             <img 
                 src={main1}
@@ -24,7 +24,7 @@ function Banner() {
                 </div>
             </div>
         </div>
-        <div className=' flex col-span-2 lg:col-span-2 md:col-span-4  md:grid-flow-row flex-wrap gap-4 '>
+        <div className=' flex  col-span-1  lg:col-span-2 md:col-span-4  md:grid-flow-row flex-wrap gap-4 '>
             <div className='grid space-x-2 relative hover:scale-105 cursor-pointer transition duration-200 ease-in' >
                 <img 
                     src={subimg1}
