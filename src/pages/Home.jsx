@@ -51,7 +51,20 @@ function Home() {
                 </div>               
             </div>
 
-
+            <div className='max-w-[1350px] mx-auto my-4'>
+                <div className='flex justify-between items-center my-6 py-2 px-2 '>
+                    <p className='text-2xl  font-bold font-sans tracking-wider'>Special Products</p>
+                    <div className='hidden md:flex space-x-2 pr-5 mt-4'>
+                    <AiOutlineLeftCircle className='w-6 h-6 cursor-pointer'/>
+                    <AiOutlineRightCircle className='w-6 h-6 cursor-pointer' />
+                    </div>
+                </div>
+                <div className='grid grid-cols-2 px-2 gap-3 md:grid-cols-6 lg:grid-cols-10'>
+                    <div className='col-span-2'>
+                        <Productcard />
+                    </div>
+                </div>               
+            </div>
 
             <div className='max-w-[1350px] mx-auto my-4'>
                 <div className='flex justify-between items-center my-6 py-2 px-2 '>
