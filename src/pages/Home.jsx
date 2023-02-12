@@ -6,6 +6,7 @@ import Productlist from '../components/Productlist'
 import Service from '../components/Service'
 import { AiOutlineLeftCircle, AiOutlineRightCircle  } from "react-icons/ai";
 import Productcard from '../components/Productcard'
+import SpecialProducts from '../components/SpecialProduct'
 
 function Home() {
   return (
@@ -61,7 +62,7 @@ function Home() {
                 </div>
                 <div className='grid grid-cols-2 px-2 gap-3 md:grid-cols-6 lg:grid-cols-10'>
                     <div className='col-span-2'>
-                        <Productcard />
+                        <SpecialProducts />
                     </div>
                 </div>               
             </div>
