@@ -17,11 +17,16 @@ function Home() {
                 <Service />
             </div>
             <div className='max-w-[1350px] mx-auto my-4'>
-                    <Productlist />
+                <Productlist />
             </div>
             <div className='max-w-[1350px] mx-auto my-4'>
-                    <MarqueeSection />
+                <MarqueeSection />
             </div>
+            <div className='max-w-[1350px] mx-auto my-4'>
+                <MarqueeSection />
+            </div>
+
+
             <div className='max-w-[1350px] mx-auto my-4'>
                 <div className='flex justify-between items-center my-6 py-2 px-2 '>
                     <p className='text-2xl  font-bold font-sans tracking-wider'>Our Lattest Blogs</p>
@@ -43,12 +48,8 @@ function Home() {
                     <div className='col-span-2'>
                         <BlogPostHome />
                     </div>
-                </div>
-                    
+                </div>               
             </div>
-
-
-
         </div>
     </div>
   )
