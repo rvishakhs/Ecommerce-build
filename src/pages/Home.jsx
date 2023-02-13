@@ -60,7 +60,13 @@ function Home() {
                     <AiOutlineRightCircle className='w-6 h-6 cursor-pointer' />
                     </div>
                 </div>
-                <div className='grid grid-cols-2 px-2 gap-3 md:grid-cols-6 lg:grid-cols-10'>
+                <div className='grid grid-cols-2 px-2 gap-3 md:grid-cols-4 lg:grid-cols-6'>
+                    <div className='col-span-2'>
+                        <SpecialProducts />
+                    </div>
+                    <div className='col-span-2'>
+                        <SpecialProducts />
+                    </div>
                     <div className='col-span-2'>
                         <SpecialProducts />
                     </div>
@@ -75,7 +81,7 @@ function Home() {
                     <AiOutlineRightCircle className='w-6 h-6 cursor-pointer' />
                     </div>
                 </div>
-                <div className='grid grid-cols-2 px-2 gap-3 md:grid-cols-6 lg:grid-cols-8'>
+                <div className='grid grid-cols-2 px-2 gap-3 flex-wrap md:grid-cols-4 lg:grid-cols-8'>
                     <div className='col-span-2'>
                         <BlogPostHome />
                     </div>

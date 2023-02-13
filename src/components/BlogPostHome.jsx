@@ -9,7 +9,7 @@ function BlogPostHome() {
             <img 
                 src={blog1}
                 alt="blogimage"
-                className='w-[350px] h-[280px] object-cover rounded-t-2xl'
+                className='w-[350px] md:w-[330px] h-[280px] object-cover rounded-t-2xl'
             />
             <p className='font-medium text-sm text-gray-400 px-4'>21 Jan. 2023</p>
             <p className='font-bold text-base text-black px-3'>A beautifull Sunday Morning Renanissance</p>

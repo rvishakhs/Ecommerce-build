@@ -7,7 +7,7 @@ import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
 
 function SpecialProducts() {
   return (
-    <div className='w-[400px] h-[350px] flex  bg-white rounded-2xl'>
+    <div className='w-[360px] md:w-[398px] lg:w-[420px] h-[350px] flex  bg-white rounded-2xl'>
         {/* Left Section */}
         <div className='p-1 flex flex-col relative'>
             <img 
@@ -37,7 +37,7 @@ function SpecialProducts() {
         </div>
         </div>
         {/* Right Section */}
-        <div className='flex flex-col px-2 py-8 space-y-2'>
+        <div className='flex flex-col px-2 py-4 md:py-8 space-y-2'>
             <p className='font-medium text-red-800  text-sm '>Harvells</p>
             <p className='font-bold text-black text-sm'>Harwells Watch collections</p>  
             <ReactStars
