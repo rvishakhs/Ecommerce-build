@@ -40,10 +40,17 @@ function PopularProductts() {
                     src={eco}
                     className="w-[250px] h-[330px] object-fill rounded-xl"
                 />
-            <div></div>
-            <div></div>
-
+                <p className='absolute top-4 left-4 text-white font-medium text-sm font-sans tracking-wider'>15% OFF</p>
+                <p className='absolute top-10 left-8 text-white font-semibold text-2xl font-sans tracking-wider'>Home Speakers</p>
+                <p className='absolute top-[80px] left-8 text-white/80 font-extralight text-xs font-sans tracking-wider'>From $399 or $16.62/mo.</p>
+                <p className='absolute top-[100px] left-8 text-white/80 font-extralight text-xs font-sans tracking-wider'>For 24 months.</p>
         </div>              
+        <div className='col-span-2'>
+            <Productcard />
+        </div>
+        <div className='col-span-2'>
+            <Productcard />
+        </div>
         <div className='col-span-2'>
             <Productcard />
         </div>
