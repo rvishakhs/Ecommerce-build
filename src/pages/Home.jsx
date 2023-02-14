@@ -35,7 +35,7 @@ function Home() {
                     <AiOutlineRightCircle className='w-6 h-6 cursor-pointer' />
                     </div>
                 </div>
-                <div className='grid grid-cols-2 overflow-auto px-2 gap-3 md:grid-cols-6 lg:grid-cols-10'>
+                <div className='grid grid-cols-2 grid-flow-col-dense auto-cols-auto overflow-x-scroll px-2 gap-3 md:grid-cols-6 lg:grid-cols-10'>
                     <div className='col-span-2'>
                         <Productcard />
                     </div>
