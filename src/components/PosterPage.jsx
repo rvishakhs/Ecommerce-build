@@ -1,14 +1,39 @@
 import React from 'react'
+import watch from "../images/watchface.png"
+import mac from "../images/macbook.png"
 
 function PosterPage() {
   return (
     <div className='flex flex-row space-x-4'>
-        <div className='bg-black/95 w-[330px] h-[480px] rounded-2xl'>
+        <div className='bg-black/95 relative w-[330px] h-[480px] rounded-2xl'>
+            <img 
+                src={watch}
+                alt="watchface"
+                className='w-[330px]  h-[480px] object-cover rounded-2xl'
+            />
+            <div className='absolute top-14 left-8 space-y-2'>
+                <p className='uppercase font-normal text-base text-white tracking-wide leading-6'>Big Screen</p>
+                <p className='font-extrabold text-2xl text-white tracking-wider leading-8'>Apple Watch series 8</p>
+                <p className='font-light text-sm text-white tracking-normal leading-4'>From $59.99/mo. for 24 months
+                </p>
 
+            </div>
         </div>
-        <div className='bg-white w-[330px] h-[480px] rounded-2xl'>
+        <div className=' relative w-[330px] h-[480px] rounded-2xl'>
+            <img 
+                src={mac}
+                alt="watchface"
+                className='w-[330px]  h-[480px] object-cover rounded-2xl'
+            />
+            <div className='absolute top-14 left-8 space-y-2'>
+                <p className='uppercase font-normal text-base text-white tracking-wide leading-6'>Big Screen</p>
+                <p className='font-extrabold text-2xl text-white tracking-wider leading-8'>Apple Watch series 8</p>
+                <p className='font-light text-sm text-white tracking-normal leading-4'>From $59.99/mo. for 24 months
+                </p>
 
+            </div>
         </div>
+
         <div className='bg-white w-[330px] h-[480px] rounded-2xl'>
 
         </div>
