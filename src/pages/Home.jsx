@@ -8,6 +8,7 @@ import { AiOutlineLeftCircle, AiOutlineRightCircle  } from "react-icons/ai";
 import Productcard from '../components/Productcard'
 import SpecialProducts from '../components/SpecialProduct'
 import PopularProductts from '../components/PopularProductts'
+import PosterPage from '../components/PosterPage'
 
 function Home() {
   return (
@@ -25,6 +26,9 @@ function Home() {
             <div className='max-w-[1350px] mx-auto my-4'>
                 <MarqueeSection />
             </div>
+            <div className='max-w-[1350px] mx-auto my-4'>
+                <PosterPage />
+            </div>
 
             {/* Featured Products  */}
             <div className='max-w-[1350px] mx-auto my-4'>
@@ -35,7 +39,7 @@ function Home() {
                     <AiOutlineRightCircle className='w-6 h-6 cursor-pointer' />
                     </div>
                 </div>
-                <div className='grid grid-cols-2 grid-flow-col-dense auto-cols-auto overflow-x-scroll px-2 gap-3 md:grid-cols-6 lg:grid-cols-10'>
+                <div className='grid grid-cols-2  px-2 gap-3 md:grid-cols-6  lg:grid-cols-10'>
                     <div className='col-span-2'>
                         <Productcard />
                     </div>
