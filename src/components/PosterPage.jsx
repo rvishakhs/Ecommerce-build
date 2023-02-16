@@ -1,6 +1,7 @@
 import React from 'react'
 import watch from "../images/watchface.png"
 import mac from "../images/macbook.png"
+import phone from "../images/appleiphone.png"
 
 function PosterPage() {
   return (
@@ -36,17 +37,15 @@ function PosterPage() {
         </div>
         <div className=' relative w-[330px] h-[480px] rounded-2xl'>
             <img 
-                src={mac}
+                src={phone}
                 alt="watchface"
                 className='w-[330px]  h-[480px] object-cover rounded-2xl'
             />
             <div className='absolute top-14 left-8 space-y-2'>
-                <p className='uppercase font-normal text-base text-black tracking-wide leading-6'>Studio Display</p>
-                <p className='font-extrabold text-2xl text-black tracking-wide leading-8'>600 Nits of brightness</p>
-                <p className='font-light text-sm text-black tracking-normal leading-4'>15-inch liquid retina display 
+                <p className='uppercase font-normal text-base text-white tracking-wide leading-6'>SmartPhone</p>
+                <p className='font-extrabold text-2xl text-white tracking-wide leading-8'>IPhone 14 Pro Max </p>
+                <p className='font-light text-sm text-white tracking-normal leading-4'>Now in Deep Purple, From $1999/Mo.<br></br> For 24 months  
                 </p>
-                <p className='pt-12 pl-10 font-bold text-gray-500/70 text-2xl'>Macbook Pro - 16</p>
-
             </div>
         </div>
 
