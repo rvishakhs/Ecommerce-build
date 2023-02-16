@@ -2,6 +2,7 @@ import React from 'react'
 import watch from "../images/watchface.png"
 import mac from "../images/macbook.png"
 import phone from "../images/appleiphone.png"
+import { SiApple } from "react-icons/si";
 
 function PosterPage() {
   return (
@@ -20,19 +21,22 @@ function PosterPage() {
 
             </div>
         </div>
-        <div className=' relative w-[330px] h-[480px] rounded-2xl'>
+        <div className=' bg-[#9d9494] relative w-[330px] h-[480px] rounded-2xl'>
             <img 
                 src={mac}
                 alt="watchface"
-                className='w-[330px]  h-[480px] object-cover rounded-2xl'
+                className='w-[330px]  h-[480px] object-contain rounded-2xl'
             />
             <div className='absolute top-14 left-8 space-y-2'>
-                <p className='uppercase font-normal text-base text-black tracking-wide leading-6'>Studio Display</p>
-                <p className='font-extrabold text-2xl text-black tracking-wide leading-8'>600 Nits of brightness</p>
-                <p className='font-light text-sm text-black tracking-normal leading-4'>15-inch liquid retina display 
-                </p>
-                <p className='pt-12 pl-10 font-bold text-gray-500/70 text-2xl'>Macbook Pro - 16</p>
-
+                 <div className='mt-4 ml-6 flex gap-2 items-center'>
+                    <SiApple className="w-10 h-10 text-black" />
+                    <p className='font-extrabold text-2xl pt-2 text-black tracking-wide leading-6'>Macbook Pro </p>
+                </div>
+                <p className='font-bold  text-lg  text-black tracking-wide leading-8'>Supercharged by M2 Pro chip</p>
+                <div className='pl-16 pt-40 '>
+                    <p className='font-bold text-sm text-black'>from <span className='font-bold text-xl text-black'>2499 $</span></p>
+                    <button className='px-4 py-2 mt-3 border !border-black rounded-full text-black font-bold'>BuyNow</button>
+                </div>
             </div>
         </div>
         <div className=' relative w-[330px] h-[480px] rounded-2xl'>
