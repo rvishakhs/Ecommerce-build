@@ -2,6 +2,8 @@ import React from 'react'
 import watch from "../images/watchface.png"
 import mac from "../images/macbook.png"
 import phone from "../images/appleiphone.png"
+import home from "../images/minihomepod.JPG"
+import { TfiApple } from "react-icons/tfi";
 import { SiApple } from "react-icons/si";
 
 function PosterPage() {
@@ -36,6 +38,23 @@ function PosterPage() {
                 <div className='pl-16 pt-40 '>
                     <p className='font-bold text-sm text-black'>from <span className='font-bold text-xl text-black'>2499 $</span></p>
                     <button className='px-4 py-2 mt-3 border !border-black rounded-full text-black font-bold'>BuyNow</button>
+                </div>
+            </div>
+        </div>
+        <div className=' bg-white relative w-[330px] h-[480px] rounded-2xl'>
+            <img 
+                src={home}
+                alt="watchface"
+                className='w-[330px]  h-[480px] object-contain rounded-2xl'
+            />
+            <div className='absolute top-10 left-8 space-y-2'>
+                 <div className='mt-4 ml-6 pl-[91px] flex gap-2 items-center'>
+                    <TfiApple className="w-9 h-9 text-black" />
+                </div>
+                <div className='pl-[90px] pt-[120px] '>
+                    <p className='font-bold text-sm text-black'>from <span className='font-bold text-xl text-black'>99 $</span></p>
+
+                    <button className='px-4 py-2 mt-20 border !border-black rounded-full text-black font-bold'>BuyNow</button>
                 </div>
             </div>
         </div>
