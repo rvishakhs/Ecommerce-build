@@ -45,14 +45,14 @@ function PosterPage() {
             <img 
                 src={home}
                 alt="watchface"
-                className='w-[330px]  h-[480px] object-contain rounded-2xl'
+                className='w-[330px] h-[480px] object-contain rounded-2xl'
             />
             <div className='absolute top-10 left-8 space-y-2'>
                  <div className='mt-4 ml-6 pl-[91px] flex gap-2 items-center'>
-                    <TfiApple className="w-9 h-9 text-black" />
+                    <TfiApple className="w-9 h-9 opacity-80 text-black" />
                 </div>
                 <div className='pl-[90px] pt-[120px] '>
-                    <p className='font-bold text-sm text-black'>from <span className='font-bold text-xl text-black'>99 $</span></p>
+                    <p className='font-bold text-sm text-black'>from <span className='font-bold text-xl text-black/80'>99 $</span></p>
 
                     <button className='px-4 py-2 -ml-3 mt-36 border !border-black rounded-full text-black font-bold'>BuyNow</button>
                 </div>
