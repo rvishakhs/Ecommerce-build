@@ -54,7 +54,7 @@ function PosterPage() {
                 <div className='pl-[90px] pt-[120px] '>
                     <p className='font-bold text-sm text-black'>from <span className='font-bold text-xl text-black'>99 $</span></p>
 
-                    <button className='px-4 py-2 mt-20 border !border-black rounded-full text-black font-bold'>BuyNow</button>
+                    <button className='px-4 py-2 -ml-3 mt-36 border !border-black rounded-full text-black font-bold'>BuyNow</button>
                 </div>
             </div>
         </div>
