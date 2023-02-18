@@ -6,6 +6,7 @@ import { MdOutlineArrowDropDownCircle } from "react-icons/md";
 function Ourstore() {
 
   const [category, setshowcategory] = useState(true)
+  const colorarry = ["amber", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"]
   return (
     <>
       <Meta head="Store | Ecomm"/>
@@ -62,13 +63,21 @@ function Ourstore() {
                     <div className='py-2 space-y-2'>
                         <p className='font-semibold text-sm text-black'>Price Range</p>
                          <div className='flex '>
-                           <div class="input-group w-48 text-xs h-8 flex-nowrap">
-                           <span className='flex items-center'>$</span> &nbsp;
-                            <input type="text" class="form-control" placeholder="From " aria-label="Username" aria-describedby="addon-wrapping"/>
-                            <span className='flex items-center'> To </span>
-                            <input type="text" class="form-control" placeholder="From " aria-label="Username" aria-describedby="addon-wrapping"/>
+                           <div className="input-group  w-48 text-xs h-8 flex-nowrap">
+                           <span className='flex items-center font-bold text-base pr-2'>$</span> &nbsp;
+                            <input type="text" className="form-control rounded-sm" placeholder="From " aria-label="From" aria-describedby="addon-wrapping"/>
+                            <span className='flex items-center font-bold text-base px-2'>$</span> &nbsp;
+                            <input type="text" className="form-control rounded-r-none" placeholder="To" aria-label="To" aria-describedby="addon-wrapping"/>
                             </div>
                           </div> 
+                    </div> 
+                    <div className='py-2 space-y-2'>
+                        <p className='font-semibold text-sm text-black'>Color</p>
+                        <div className='flex flex-wrap gap-2 '>
+                         {colorarry.map((color) => (
+                          <div className={`w-5 h-5 flex-wrap rounded-full border bg-${color}-400`} />
+                         ))}
+                        </div>
                     </div> 
                 </div>
                 <div className='px-2 py-2 bg-white rounded-2xl'>
