@@ -14,8 +14,8 @@ function Productcard({grid}) {
     
     return (
 
-    <div className={`${location.pathname === "/store" ? `grid grid-cols-${grid} ` 
-    : "w-[250px] h-[330px] group relative gap-3 bg-white rounded-xl my-2"}`}>
+        <div className={`${location.pathname === "/store" ? `col-span-${grid} w-full ` 
+        : "w-[250px] h-[330px] group relative gap-3 bg-white rounded-xl my-2"}`}>
         <div className='w-[250px] group h-[220px]  py-2'>
             <img 
                 src={watch}
@@ -38,20 +38,20 @@ function Productcard({grid}) {
                 name='rating'
                 starDimension="18px"
                 starSpacing="2px"
-            />        
+                />        
             <p className='font-bold text-gray-500 '> $ 800</p>
         </div>
         <div className='absolute flex items-center top-4 right-3'>
             <AiOutlineHeart
                 className="w-6 h-6 cursor-pointer hover:scale-105"
-            />
+                />
         </div>
         <div className='absolute hidden  group-hover:block flex-col space-y-2 top-12 right-3 '>
             <MdOutlineCompareArrows className='w-6 h-6 cursor-pointer hover:scale-105'/>
             <AiOutlineEye className='w-6 h-6 cursor-pointer hover:scale-105'/>
             <BsBagPlus className='w-5 h-5 cursor-pointer hover:scale-105'/>
         </div>
-    </div>
+    </div> 
   )
 }
 

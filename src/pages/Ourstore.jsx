@@ -217,17 +217,11 @@ function Ourstore() {
                   </div>
                 </div>
               {/* Products items   */}
-                <div className='flex flex-wrap gap-2 mt-2 mb-0'>
-                  <Productcard grid={grid} />     
-                  <Productcard grid={grid} />     
-                  <Productcard grid={grid} />     
-                  <Productcard grid={grid} />     
-                  <Productcard grid={grid} />     
-                  <Productcard grid={grid} />     
-                  <Productcard grid={grid} />     
-                  <Productcard grid={grid} />     
-                  <Productcard grid={grid} />     
- 
+                <div className='grid w-full grid-cols-2 md:grid-cols-6 lg:grid-cols-9 flex-wrap'>
+                    <Productcard grid={grid} />        
+                    <Productcard grid={grid} />        
+                    <Productcard grid={grid} />        
+                    <Productcard grid={grid} />        
                 </div>
             </div>
         </div>
