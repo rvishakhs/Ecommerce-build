@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import { MdOutlineArrowDropDownCircle } from "react-icons/md";
+import { BiSort,BiSortUp,BiSortDown,BiSortAZ  } from "react-icons/bi";
 import RandomProducts from '../components/RandomProducts';
+import Productcard from '../components/Productcard';
 
 function Ourstore() {
 
@@ -161,8 +163,43 @@ function Ourstore() {
 
                 </div>
             </div>
-            <div className='col-span-8 flex flex-col items-center py-2'>
-                <div className='w-full px-2 py-2 bg-white rounded-2xl '></div>
+          {/* Right Section */}
+            <div className='col-span-2 md:col-span-5 mr-1 md:mr-0 lg:col-span-8 flex flex-col items-center py-2'>
+              {/* Top bar with sort function */}
+                <div className='w-full px-2 flex flex-col md:flex-row justify-between py-2 bg-white rounded-xl '>
+                  <div className='flex gap-2 items-center px-2'>
+                      <p className='font-bold text-sm'>Sort by : </p>
+                      <div>
+                        <select className="form-select bg-gray-200 border-none " aria-label="Sortby">
+                          <option >Best Value Products</option>
+                          <option selected value="1">Offer Zone</option>
+                          <option value="2">Price High to Low</option>
+                          <option value="3">Price Low to high</option>
+                        </select>  
+                      </div>
+                  </div>
+                  <div className='flex flex-row gap-2 items-center'>
+                    <p className='text-gray-500 text-sm font-medium tracking-wide'>25 Products</p>
+                    <div className='flex items-center gap-2 bg-gray-200 py-2 px-2 rounded-lg'>
+                      <BiSort className='w-5 h-5 cursor-pointer hover:scale-105'/>
+                      <BiSortUp className='w-5 h-5 cursor-pointer hover:scale-105' />
+                      <BiSortDown className='w-5 h-5 cursor-pointer hover:scale-105' />
+                      <BiSortAZ className='w-5 h-5 cursor-pointer hover:scale-105' />
+                    </div>
+                  </div>
+                </div>
+              {/* Products items   */}
+                <div className='flex flex-wrap gap-2 mt-2 mb-0'>
+                  <Productcard />     
+                  <Productcard />     
+                  <Productcard />     
+                  <Productcard />     
+                  <Productcard />     
+                  <Productcard />     
+                  <Productcard />     
+                  <Productcard />     
+                  <Productcard />     
+                </div>
             </div>
         </div>
       </main>
