@@ -5,6 +5,10 @@ import { MdOutlineArrowDropDownCircle } from "react-icons/md";
 import { BiSort,BiSortUp,BiSortDown,BiSortAZ  } from "react-icons/bi";
 import RandomProducts from '../components/RandomProducts';
 import Productcard from '../components/Productcard';
+import gr from "../images/gr.svg"
+import gr1 from "../images/gr2.svg"
+import gr2 from "../images/gr3.svg"
+import gr3 from "../images/gr4.svg"
 
 function Ourstore() {
 
@@ -12,13 +16,16 @@ function Ourstore() {
   const [filter, setfilter] = useState(true)
   const [Producttags, setproductstags] = useState(false)
   const [Randomproducts, setRandomproducts] = useState(true)
+  const  [grid, setgrid] = useState(2)
   const colorarry = ["amber", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"]
+  
   return (
+
     <>
       <Meta head="Store | Ecomm"/>
       <Breadcrumb tittle="Our store" />
       <main className='bg-gray-200 py-4'>
-        <div className='max-w-7xl mx-auto grid grid-cols-2  md:grid-cols-7 lg:grid-cols-10 '>
+        <div className='max-w-7xl mx-auto grid grid-cols-2  md:grid-cols-7 lg:grid-cols-11 '>
           {/* Left Section */}
             <div className='col-span-2 gap-2 py-2 px-2 flex  flex-col'>
               {/* Category Section */}
@@ -164,9 +171,9 @@ function Ourstore() {
                 </div>
             </div>
           {/* Right Section */}
-            <div className='col-span-2 md:col-span-5 mr-1 md:mr-0 lg:col-span-8 flex flex-col items-center py-2'>
+            <div className='col-span-2 md:col-span-5 mx-1 !md:mx-0 lg:mx-0 lg:col-span-9 flex flex-col items-center py-2'>
               {/* Top bar with sort function */}
-                <div className='w-full px-2 flex flex-col md:flex-row justify-between py-2 bg-white rounded-xl '>
+                <div className='w-full px-2 flex flex-col gap-2 md:flex-row justify-between py-2 bg-white rounded-xl '>
                   <div className='flex gap-2 items-center px-2'>
                       <p className='font-bold text-sm'>Sort by : </p>
                       <div>
@@ -181,24 +188,46 @@ function Ourstore() {
                   <div className='flex flex-row gap-2 items-center'>
                     <p className='text-gray-500 text-sm font-medium tracking-wide'>25 Products</p>
                     <div className='flex items-center gap-2 bg-gray-200 py-2 px-2 rounded-lg'>
-                      <BiSort className='w-5 h-5 cursor-pointer hover:scale-105'/>
-                      <BiSortUp className='w-5 h-5 cursor-pointer hover:scale-105' />
-                      <BiSortDown className='w-5 h-5 cursor-pointer hover:scale-105' />
-                      <BiSortAZ className='w-5 h-5 cursor-pointer hover:scale-105' />
+                      <img 
+                          src={gr3}
+                          alt="view1"
+                          onClick={() => setgrid(2)}
+                          className='w-4 h-4 cursor-pointer hover:scale-105 object-contain'
+                     />
+                      <img 
+                          src={gr2}
+                          alt="view2"
+                          onClick={() => setgrid(3)}
+                          className='w-4 h-4 cursor-pointer hover:scale-105 object-contain'
+                     />
+                      <img 
+                          src={gr1}
+                          alt="view3"
+                          onClick={() => setgrid(4)}
+                          className='w-4 h-4 cursor-pointer hover:scale-105 object-contain'
+                     />
+                      <img 
+                          src={gr}
+                          alt="view4"
+                          onClick={() => setgrid(8)}
+                          className='w-4 h-4 cursor-pointer hover:scale-105 object-contain'
+                     />
+                     
                     </div>
                   </div>
                 </div>
               {/* Products items   */}
                 <div className='flex flex-wrap gap-2 mt-2 mb-0'>
-                  <Productcard />     
-                  <Productcard />     
-                  <Productcard />     
-                  <Productcard />     
-                  <Productcard />     
-                  <Productcard />     
-                  <Productcard />     
-                  <Productcard />     
-                  <Productcard />     
+                  <Productcard grid={grid} />     
+                  <Productcard grid={grid} />     
+                  <Productcard grid={grid} />     
+                  <Productcard grid={grid} />     
+                  <Productcard grid={grid} />     
+                  <Productcard grid={grid} />     
+                  <Productcard grid={grid} />     
+                  <Productcard grid={grid} />     
+                  <Productcard grid={grid} />     
+ 
                 </div>
             </div>
         </div>

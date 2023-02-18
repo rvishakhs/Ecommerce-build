@@ -5,10 +5,17 @@ import StarRatings from 'react-star-ratings';
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
 import { BsBagPlus } from "react-icons/bs";
+import { useLocation } from 'react-router-dom';
 
-function Productcard() {
-  return (
-    <div className='w-[250px] h-[330px] group relative gap-3 bg-white rounded-xl my-2'>
+function Productcard({grid}) {
+    
+    let location = useLocation();
+    
+    
+    return (
+
+    <div className={`${location.pathname === "/store" ? `grid grid-cols-${grid} ` 
+    : "w-[250px] h-[330px] group relative gap-3 bg-white rounded-xl my-2"}`}>
         <div className='w-[250px] group h-[220px]  py-2'>
             <img 
                 src={watch}
