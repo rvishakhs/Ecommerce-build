@@ -99,7 +99,7 @@ function Header() {
                 <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Home</NavLink>
                 <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/store'>Our Store</NavLink>
                 <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/blogs'>Blogs</NavLink>
-                <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Contact Us</NavLink>
+                <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/contact'>Contact Us</NavLink>
             </div>
         </div>
     </div>
