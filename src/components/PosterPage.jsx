@@ -8,8 +8,8 @@ import { SiApple } from "react-icons/si";
 
 function PosterPage() {
   return (
-    <div className='flex flex-row space-x-4'>
-        <div className='bg-black/95 relative w-[330px] h-[480px] rounded-2xl'>
+    <div className='flex flex-row  space-x-4 overflow-x-scroll scrollbar-hide w-full px-2 md:px-0'>
+        <div className='bg-black/95 relative w-[330px] flex-shrink-0 h-[480px] rounded-2xl'>
             <img 
                 src={watch}
                 alt="watchface"
@@ -23,7 +23,7 @@ function PosterPage() {
 
             </div>
         </div>
-        <div className=' bg-[#9d9494] relative w-[330px] h-[480px] rounded-2xl'>
+        <div className=' bg-[#9d9494] relative w-[330px] h-[480px] flex-shrink-0 rounded-2xl'>
             <img 
                 src={mac}
                 alt="watchface"
@@ -41,7 +41,7 @@ function PosterPage() {
                 </div>
             </div>
         </div>
-        <div className=' bg-white relative w-[330px] h-[480px] rounded-2xl'>
+        <div className=' bg-white relative w-[330px] h-[480px] flex-shrink-0 rounded-2xl'>
             <img 
                 src={home}
                 alt="watchface"
@@ -58,7 +58,7 @@ function PosterPage() {
                 </div>
             </div>
         </div>
-        <div className=' relative w-[330px] h-[480px] rounded-2xl'>
+        <div className=' relative w-[330px] flex-shrink-0 h-[480px] rounded-2xl'>
             <img 
                 src={phone}
                 alt="watchface"
