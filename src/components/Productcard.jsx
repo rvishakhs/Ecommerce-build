@@ -14,9 +14,9 @@ function Productcard({grid}) {
     
     return (
 
-        <div className={`${location.pathname === "/store" ? `col-span-${grid} w-full ` 
+        <div className={`${location.pathname === "/store" ? `col-span-${grid}  ${grid === 2 ? "flex flex-col" : "flex flex-row"}  bg-white rounded-xl my-2 ` 
         : "w-[250px] h-[330px] group relative gap-3 bg-white rounded-xl my-2"}`}>
-        <div className='w-[250px] group h-[220px]  py-2'>
+        <div className={`${grid === 2 ? "w-[200px] group h-[200px]  py-2" : "w-[250px] group h-[220px]  py-2"}`}>
             <img 
                 src={watch}
                 className="w-[250px] group-hover:hidden h-[200px] rounded-t-xl object-contain"
@@ -28,7 +28,7 @@ function Productcard({grid}) {
                 alt='productimage'
             />
             </div>
-        <div className='space-y-1 px-3'>
+        <div className={`${location.pathname === "/store" ? `pt-4 ${grid === 2 ? "px-2 py-2" : "px-3  py-2"}` : "space-y-1 px-3"} `}>
             <p className='font-medium text-red-800 text-sm '>Harvells</p>
             <p className='font-bold text-black text-sm'>Harwells Watch collections</p>            
             <StarRatings

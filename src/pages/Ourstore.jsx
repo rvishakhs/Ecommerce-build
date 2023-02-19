@@ -16,7 +16,7 @@ function Ourstore() {
   const [filter, setfilter] = useState(true)
   const [Producttags, setproductstags] = useState(false)
   const [Randomproducts, setRandomproducts] = useState(true)
-  const  [grid, setgrid] = useState(2)
+  const  [grid, setgrid] = useState(3)
   const colorarry = ["amber", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"]
   
   return (
@@ -203,13 +203,13 @@ function Ourstore() {
                       <img 
                           src={gr1}
                           alt="view3"
-                          onClick={() => setgrid(4)}
+                          onClick={() => {setgrid(5)}}
                           className='w-4 h-4 cursor-pointer hover:scale-105 object-contain'
                      />
                       <img 
                           src={gr}
                           alt="view4"
-                          onClick={() => setgrid(8)}
+                          onClick={() => {setgrid(10)}}
                           className='w-4 h-4 cursor-pointer hover:scale-105 object-contain'
                      />
                      
@@ -217,7 +217,8 @@ function Ourstore() {
                   </div>
                 </div>
               {/* Products items   */}
-                <div className='grid w-full grid-cols-2 md:grid-cols-6 lg:grid-cols-9 flex-wrap'>
+                <div className={`grid w-full grid-cols-2 md:grid-cols-6 gap-2 lg:grid-cols-10 flex-wrap`}>
+                    <Productcard grid={grid} />        
                     <Productcard grid={grid} />        
                     <Productcard grid={grid} />        
                     <Productcard grid={grid} />        
