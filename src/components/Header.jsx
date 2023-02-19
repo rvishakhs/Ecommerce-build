@@ -98,7 +98,7 @@ function Header() {
             <div className='flex items-center flex-row gap-x-4'>
                 <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Home</NavLink>
                 <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/store'>Our Store</NavLink>
-                <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Blogs</NavLink>
+                <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/blogs'>Blogs</NavLink>
                 <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Contact Us</NavLink>
             </div>
         </div>
