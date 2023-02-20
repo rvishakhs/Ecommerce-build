@@ -45,7 +45,9 @@ function Header() {
                         alt="compare"
                         className='md:w-8 md:h-8 lg:w-9 lg:h-9 h-5 w-5'
                     />
-                    <p className='text-left font-sans text-xs md:text-sm text-white'>Compare<br/>Products</p>
+                    <NavLink to="/compare">
+                        <p className='text-left font-sans text-xs md:text-sm text-white'>Compare<br/>Products</p>
+                    </NavLink>
                 </div>
                 <div className=' space-x-2 flex items-center'>
                     <img
