@@ -30,7 +30,6 @@ function CompareProduct () {
                 <p className='font-semibold text-gray-500 px-2 py-2'>Color :<span className='px-6 text-black'></span></p>
                 <p className='font-semibold text-gray-500 px-2 py-2'>Availability :<span className='px-6 text-black'>In Stock</span></p>
                 <p className='font-semibold text-gray-500 px-2 py-2'>Technical Details :<span className='px-6 text-black'></span></p>
-
             </div>
 
 

@@ -8,6 +8,7 @@ import Blogs from './pages/Blogs';
 import Compare from './pages/Compare';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Ourstore from './pages/Ourstore';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
               <Route path='/about' element={<About />}/>
               <Route path='/contact' element={<Contact />}/>
               <Route path='/compare' element={<Compare />}/>
+              <Route path='/login' element={<Login />}/>
           </Routes>
         <Footer />
       </BrowserRouter>

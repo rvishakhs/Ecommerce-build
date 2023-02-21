@@ -39,15 +39,15 @@ function Header() {
                 </div>
             </div>
             <div className='md:px-10 px-2 space-x-8 flex flex-row'>
-                <div className=' space-x-2 flex items-center'>
-                    <img
-                        src={compare}
-                        alt="compare"
-                        className='md:w-8 md:h-8 lg:w-9 lg:h-9 h-5 w-5'
-                    />
-                    <NavLink to="/compare">
-                        <p className='text-left font-sans text-xs md:text-sm text-white'>Compare<br/>Products</p>
-                    </NavLink>
+                    <div className=' space-x-2 flex items-center'>
+                            <img
+                                src={compare}
+                                alt="compare"
+                                className='md:w-8 md:h-8 lg:w-9 lg:h-9 h-5 w-5'
+                            />
+                        <NavLink to="/compare">
+                            <p className='text-left font-sans text-xs md:text-sm text-white'>Compare<br/>Products</p>
+                        </NavLink>
                 </div>
                 <div className=' space-x-2 flex items-center'>
                     <img
@@ -55,7 +55,9 @@ function Header() {
                         alt="compare"
                         className='md:w-8 md:h-8 lg:w-9 lg:h-9 h-5 w-5'
                     />
-                    <p className='text-left font-sans text-xs md:text-sm text-white'>Favourite<br/>Wishlist</p>
+                    <NavLink to="/wishlist">
+                        <p className='text-left font-sans text-xs md:text-sm text-white'>Favourite<br/>Wishlist</p>
+                    </NavLink>
                 </div>
                 <div className=' space-x-2 flex items-center'>
                     <img
@@ -63,7 +65,9 @@ function Header() {
                         alt="compare"
                         className='md:w-8 md:h-8 lg:w-9 lg:h-9 h-5 w-5'
                     />
-                    <p className='text-left font-sans text-xs md:text-sm text-white'>Log In<br/>My Account</p>
+                    <NavLink to="/login">
+                        <p className='text-left font-sans text-xs md:text-sm text-white'>Log In<br/>My Account</p>
+                    </NavLink>
                 </div>
                 <div className='flex items-center '>
                     <img
