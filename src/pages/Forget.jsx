@@ -6,8 +6,8 @@ import Meta from '../components/Meta'
 function Forget() {
   return (
     <>
-      <Meta head="Forget password"/>
-      <Breadcrumb tittle="Forget-password" />
+      <Meta head="Rest password"/>
+      <Breadcrumb tittle="Reset-password" />
       <main className='bg-gray-200 py-6'>
         <div className='max-w-7xl flex mx-auto justify-center my-auto h-fit '>
             <div className='flex flex-col bg-white px-2 py-2 rounded-lg w-[450px] h-[330px] my-3 '>

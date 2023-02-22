@@ -31,7 +31,7 @@ function Login() {
                     </div>
                    </form> 
                    <div className='pl-[32px] py-2'>
-                      <Link to="/forget-login">Forget Password ?</Link>
+                      <Link to="/resetpassword">Forget Password ?</Link>
                    </div>
                    <div className='mt-2 py-2 flex px-6  gap-3 justify-center'>
                         <button className='px-4 py-2 bg-black rounded-3xl text-white font-semibold tracking-wide hover:!bg-white hover:!border hover:!border-yellow-500 hover:!text-black '>Login</button>
