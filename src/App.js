@@ -11,6 +11,7 @@ import Forget from './pages/Forget';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Ourstore from './pages/Ourstore';
+import Signup from './pages/Signup';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path='/contact' element={<Contact />}/>
               <Route path='/compare' element={<Compare />}/>
               <Route path='/login' element={<Login />}/>
+              <Route path='/signup' element={<Signup />}/>
               <Route path='/forget-login' element={<Forget />}/>
           </Routes>
         <Footer />
