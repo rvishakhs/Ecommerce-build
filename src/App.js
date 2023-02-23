@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Meta from './components/Meta';
 import About from './pages/About';
+import Blogpage from './pages/Blogpage';
 import Blogs from './pages/Blogs';
 import Compare from './pages/Compare';
 import Contact from './pages/Contact';
@@ -23,6 +24,7 @@ function App() {
               <Route path='/' element={<Home />}/>
               <Route path='/store' element={<Ourstore />}/>
               <Route path='/blogs' element={<Blogs />}/>
+              <Route path='/blogs/:id' element={<Blogpage />}/>
               <Route path='/about' element={<About />}/>
               <Route path='/contact' element={<Contact />}/>
               <Route path='/compare' element={<Compare />}/>

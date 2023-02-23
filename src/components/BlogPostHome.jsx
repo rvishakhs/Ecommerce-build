@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import blog1 from "../images/blog-1.jpg"
 import Button from './Button'
 
@@ -19,7 +19,9 @@ function BlogPostHome() {
             <p className='font-bold text-base text-black px-3'>A beautifull Sunday Morning Renanissance</p>
             <p className='font-medium text-sm pl-4 pr-4'>Just some fucking narrations and descriptions about blogs and technolgy newses related.</p>
             <div className='px-3'>
+              <Link to="/blogs/:id">
                 <Button text="Read More"/>
+              </Link>
             </div>
         </div>
     </div>
