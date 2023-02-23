@@ -2,9 +2,10 @@ import React from 'react'
 import { FaRegPaperPlane, FaInstagram, FaFacebookSquare, FaGithub , FaLinkedin } from "react-icons/fa";
 import google from "../images/playstore.png"
 import apple from "../images/apple.png"
+import { Link } from 'react-router-dom';
 
 
-const informationlinks = ["Privacy Policy", "Refund Policy", "Shipping Policy", "Terms & Conditions", "Blogs"]
+const informationlinks = ["Privacy-policy", "Refund-Policy", "Shipping-Policy", "Terms&Conditions", "Blogs"]
 const Accountlinks = ["Search", "About Us", "FAQ", "Contact", "Size Chart"]
 const Quicklinks = ["Accessories", "Laptops", "Smartphones", "Headphones", "Tablets"]
 
@@ -62,7 +63,9 @@ function Footer() {
                <p className='font-bold text-lg text-white '>Information Links</p>
                 {informationlinks.map((item) => (
                     <div key={item}className='py-2 '>
-                        <p className='text-gray-400 font-normal font-sans cursor-pointer'>{item}</p>
+                        <Link to={`/${item}`}>
+                            <p className='text-gray-400 font-normal font-sans cursor-pointer'>{item}</p>
+                        </Link>
                     </div>
                 ))}
 

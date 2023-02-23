@@ -51,7 +51,7 @@ function Blogpage() {
                     So, the best practice is to not rely on Node.js’ VM module as a secure sandbox to run untrusted JavaScript code. This note is clearly made in the Node.js API documentation, which reads: “The node:vm module is not a security mechanism. Do not use it to run untrusted code.”</p>
 
                     <div className='mt-2 px-4 py-4'>
-                        <h1 className='font-bold text-2xl '>Comment Section</h1>
+                        <h1 className='font-bold text-2xl  '>Comment Section</h1>
                     </div>
             </div> 
         </div>

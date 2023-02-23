@@ -8,6 +8,7 @@ import Blogpage from './pages/Blogpage';
 import Blogs from './pages/Blogs';
 import Compare from './pages/Compare';
 import Contact from './pages/Contact';
+import Privacypolicy from './pages/Footer/Privacypolicy';
 import Forget from './pages/Forget';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -31,6 +32,7 @@ function App() {
               <Route path='/login' element={<Login />}/>
               <Route path='/signup' element={<Signup />}/>
               <Route path='/forget-login' element={<Forget />}/>
+              <Route path='/privacy-policy' element={<Privacypolicy />}/>
           </Routes>
         <Footer />
       </BrowserRouter>

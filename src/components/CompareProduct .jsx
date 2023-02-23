@@ -12,7 +12,7 @@ function CompareProduct () {
                 alt="Compare1img"
                 className='w-full h-[200px] object-contain'
             />
-            <AiOutlineClose className='w-5 h-5 absolute top-2 cursor-pointer hover:scale-110 right-3' />  
+            <AiOutlineClose className='w-5 h-5 absolute top-2 cursor-pointer  hover:animate-spin right-3' />  
             <p className='font-bold text-base text-black px-2'>Apple Watch Series 8</p>
             <div className='divide-y-2'>
                 <div className='flex flex-row space-x-4 items-center py-2'>
