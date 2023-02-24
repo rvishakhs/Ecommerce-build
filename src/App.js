@@ -16,6 +16,7 @@ import Forget from './pages/Forget';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Ourstore from './pages/Ourstore';
+import Productpage from './pages/Productpage,';
 import Signup from './pages/Signup';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Routes>
               <Route path='/' element={<Home />}/>
               <Route path='/store' element={<Ourstore />}/>
+              <Route path='/product/:id' element={<Productpage />}/>
               <Route path='/blogs' element={<Blogs />}/>
               <Route path='/blogs/:id' element={<Blogpage />}/>
               <Route path='/about' element={<About />}/>
