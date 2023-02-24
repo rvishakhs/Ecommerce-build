@@ -5,7 +5,7 @@ import apple from "../images/apple.png"
 import { Link } from 'react-router-dom';
 
 
-const informationlinks = ["Privacy-policy", "Refund-Policy", "Shipping-Policy", "Terms&Conditions", "Blogs"]
+const informationlinks = [{name: "Privacy Policy", link : "Privacy-Policy"}, {name: "Return Policy", link : "Return-Policy"}, {name: "Shipping Policy", link : "shipping-Policy"}, {name: "Terms & Conditions", link : "terms&Conditions"}, {name: "Blogs", link : "blogs"}  ]
 const Accountlinks = ["Search", "About Us", "FAQ", "Contact", "Size Chart"]
 const Quicklinks = ["Accessories", "Laptops", "Smartphones", "Headphones", "Tablets"]
 
@@ -63,8 +63,8 @@ function Footer() {
                <p className='font-bold text-lg text-white '>Information Links</p>
                 {informationlinks.map((item) => (
                     <div key={item}className='py-2 '>
-                        <Link to={`/${item}`}>
-                            <p className='text-gray-400 font-normal font-sans cursor-pointer'>{item}</p>
+                        <Link to={`/${item.link}`}>
+                            <p className='text-gray-400 font-normal font-sans cursor-pointer'>{item.name}</p>
                         </Link>
                     </div>
                 ))}

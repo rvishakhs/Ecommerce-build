@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Privacypolicy from './pages/Footer/Privacypolicy';
 import Refundpolicy from './pages/Footer/Refundpolicy';
 import Shipping from './pages/Footer/Shipping';
+import Terms from './pages/Footer/Terms';
 import Forget from './pages/Forget';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -35,8 +36,9 @@ function App() {
               <Route path='/signup' element={<Signup />}/>
               <Route path='/forget-login' element={<Forget />}/>
               <Route path='/privacy-policy' element={<Privacypolicy />}/>
-              <Route path='/Refund-policy' element={<Refundpolicy />}/>
+              <Route path='/Return-policy' element={<Refundpolicy />}/>
               <Route path='/Shipping-policy' element={<Shipping />}/>
+              <Route path='/Terms&Conditions' element={<Terms />}/>
           </Routes>
         <Footer />
       </BrowserRouter>
