@@ -5,7 +5,7 @@ import Button from '../components/Button'
 import Meta from '../components/Meta'
 import Productcard from '../components/Productcard'
 import Zoom from 'react-img-zoom'
-import { AiOutlineZoomIn } from "react-icons/ai";
+import { AiOutlineZoomIn, AiOutlineHeart } from "react-icons/ai";
 import apple1 from "../images/ip141.webp"
 import apple2 from "../images/ip142.webp"
 import apple3 from "../images/ip143.webp"
@@ -33,7 +33,7 @@ function Productpage() {
                         img={images[imageindex]}
                         zoomScale={3}
                         width="100%"
-                        height={450}
+                        height={550}
                         className="hover:cursor-move "
                     />
                     <AiOutlineZoomIn className='w-5 h-5 absolute top-2 left-2 text-gray-500'/>    
@@ -41,20 +41,93 @@ function Productpage() {
                 <div className='flex space-x-2 p-2 overflow-x-scroll scrollbar-hide'>
                     {images.map((image, index) => (
                         <div >
-                        <div className='px-2 w-[60px] h-[80px] md:w-[120px] md:h-[120px] py-2 border border-black'>
-                            <img
-                                src={image}
-                                alt="image"
-                                className='w-[60px] h-[60px] md:w-[100px] md:h-[100px] object-contain cursor-pointer'
-                                onClick={(e) => setimageindex(index)}
-                            />
-                        </div>
+                            <div className='px-2 w-[60px] h-[80px] md:w-[120px] md:h-[120px] py-2 border border-black'>
+                                <img
+                                    src={image}
+                                    alt="image"
+                                    className='w-[60px] h-[60px] md:w-[100px] md:h-[100px] object-contain cursor-pointer'
+                                    onClick={(e) => setimageindex(index)}
+                                />
+                            </div>
                         </div>
                     ))}
                     
                 </div>
             </div>
-            {/* <div className='col-span-2 md:col-span-4 lg:col-span-6 bg-white py-2 px-2'></div> */}
+            <div className='col-span-2 md:col-span-4 lg:col-span-6 bg-white py-2 px-2'>
+                <div className='flex flex-col mt-2 divide-y-2'>
+                    <div className='flex flex-col px-2 py-2 '>
+                        <h2 className='font-bold text-xl'>Apple Iphone 14 pro Max</h2>
+                            <div className='flex flex-row items-center space-x-2'>
+                                <p className='text-gray-500 font-semibold text-sm'>Brand :<span className='pl-2'>Apple</span></p> 
+                                <img 
+                                    src='https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png'
+                                    className='w-[40px] h-[40px] object-contain'
+                                />
+                            </div>
+                    </div>
+                    <div className='flex flex-col gap-1 px-2'>
+                        <p className='font-bold text-lg mt-2  tracking-wide'>$100</p>
+                        <div className='flex flex-row items-center  space-x-2'>
+                            <ReactStars
+                                count={5}
+                                value={4}
+                                size={22}
+                                activeColor="#ffd700"
+                                edit={false}
+                            />
+                            <p className='font-normal text-gray-500 text-xs '>( Based on 5 Reviews )</p>
+                        </div>
+                        <p
+                            className='hover:underline cursor-pointer'
+                            onClick={() => setwritereview(!writereview)}
+                        >
+                        Write review
+                        </p>
+
+
+                    </div>
+                    <div className='flex flex-col mt-1 gap-1 px-2'>
+                        <p className='font-semibold text-base mt-2'>Type :<span className='pl-1 text-gray-600'> Mobile phone</span></p>
+                        <p className='font-semibold text-base'>SKU :<span className='pl-1 text-gray-600'> SKU1177GH</span></p>
+                        <div className='flex flex-row space-x-2 mt-2 items-center'>
+                            <p className='font-semibold text-base'>Size :</p>
+                            <div className='px-2 py-2 border rounded-md hover:!border-yellow-500 border-b-gray-300 cursor-pointer' >128 GB</div>
+                            <div className='px-2 py-2 border rounded-md hover:!border-yellow-500 border-b-gray-300 cursor-pointer' >256 GB</div>
+                            <div className='px-2 py-2 border rounded-md hover:!border-yellow-500 border-b-gray-300 cursor-pointer' >512 GB</div>
+                            <div className='px-2 py-2 border rounded-md hover:!border-yellow-500 border-b-gray-300 cursor-pointer' >1 TB</div>
+                        </div>
+                        <div className='flex flex-row space-x-2 mt-2 items-center'>
+                            <p className='font-semibold text-base'>Color :</p>
+                            <div className='px-2 py-2 border rounded-md hover:!border-black border-b-gray-300 cursor-pointer' ><div className='bg-black rounded-full p-1'/>Black</div>
+                            <div className='px-2 py-2 border rounded-md hover:!border-gray-500 border-b-gray-300 cursor-pointer' ><div className='bg-gray-500 rounded-full p-1'/> Space Gray</div>
+                            <div className='px-2 py-2 border rounded-md hover:!border-purple-500 border-b-gray-300 cursor-pointer' ><div className='bg-purple-500 rounded-full p-1'/> Deep Purpule</div>
+                            <div className='px-2 py-2 border rounded-md hover:!border-blue-500 border-b-gray-300 cursor-pointer' ><div className='bg-blue-500 rounded-full p-1'/>Blue</div>
+                        </div>
+                        <div className='mt-2 flex items-center flex-row gap-2'>
+                            <p className='font-semibold text-base'>Qty :</p>
+                            <input 
+                                type="number"
+                                name=''
+                                min={1}
+                                max={10}
+                                defaultValue={1}
+                                className="form-control ring-yellow-500 focus:ring-1 focus:border-none "
+                                style={{width : "70px"}}
+                                id=""
+                            />
+                            <Button text="Add to cart"/>
+                            <button className='px-3 py-2 border rounded-3xl hover:!border-yellow-500 '>Add to compare</button>
+                        </div>
+                        <div className='mt-2 px-2 flex gap-2 flex-row items-center'>
+                            <AiOutlineHeart className='w-5 h-5 cursor-pointer' />
+                                <button className='hover:underline'>
+                                    Add to Wishlist
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         {/* Description Section */}
         <div className='flex  max-w-7xl mx-auto mt-2  pt-2'>
