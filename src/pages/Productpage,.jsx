@@ -13,15 +13,22 @@ function Productpage() {
     <>
       <Meta head="Product | Ecomm"/>
       <Breadcrumb tittle="Store > ProductName" />
-      <main className='bg-gray-200 py-4'>
+      <main className='bg-gray-200 py-4 px-2'>
         {/* Product Details */}
         <div className='max-w-7xl mx-auto grid grid-cols-2  md:grid-cols-8 lg:grid-cols-12 '>
             <div className='col-span-6 bg-white py-2 px-2'></div>
             <div className='col-span-6 bg-white py-2 px-2'></div>
         </div>
         {/* Description Section */}
-        <div className=' max-w-7xl mx-auto flex bg-white py-2 px-2 w-full mt-4 '>
-
+        <div className='flex  max-w-7xl mx-auto mt-2  pt-2'>
+            <h1 className='font-bold text-xl tracking-wide font-sans  '>Description</h1>
+        </div>
+        <div className=' max-w-7xl mx-auto flex bg-white py-2 px-2 w-full mt-2 rounded-lg '>
+            <p className='font-sans font-normal text-base px-2 py-2 leading-6 text-justify'>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, quasi consequatur eum fugiat quibusdam dolores voluptatum praesentium, accusamus dignissimos, 
+                velit dolorem laboriosam amet accusantium alias suscipit illo voluptatibus? Sit, aliquid. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ullam 
+                perferendis doloremque natus libero aperiam rerum autem voluptate, excepturi expedita repudiandae iure beatae nesciunt blanditiis atque quo maiores reiciendis. Natus.
+            </p>
         </div>
         {/* Review Section */}
         <div className='flex  max-w-7xl mx-auto mt-2  pt-2'>
@@ -33,26 +40,25 @@ function Productpage() {
                     <ReactStars
                         count={5}
                         value={4}
-                        size={18}
+                        size={22}
                         activeColor="#ffd700"
                         edit={false}
                     />
                     <p className='font-normal text-gray-500 text-xs '>Based on 5 Reviews</p>
                 </div>
                 <div className='flex  '>
-                    <a
-                        href=''
-                        className='hover:underline'
-                        
-                        onClick={() => setwritereview(!writereview)}
-                    >
+                        <p
+                            className='hover:underline cursor-pointer'
+                            onClick={() => setwritereview(!writereview)}
+                        >
                         Write review
-                    </a>
+                        </p>
+                    
                 </div>
             </div>   
             {writereview && (
-                <div className='px-4 mt-2 '>
-                <h2 className='font-bold '>Write a review </h2> 
+                <div className='md:px-4 px-0 mt-2 '>
+                <h2 className='font-bold px-4 '>Write a review </h2> 
                 <form className='px-2 mt-4 space-y-2 flex flex-col '>
                     <div className="form-group px-2">
                       <input 
@@ -64,11 +70,22 @@ function Productpage() {
                     </div>
                     <div className="form-group px-2">
                       <input 
-                        type="tel" 
+                        type="text" 
                         className="form-control  focus:ring-1 ring-yellow-500 hover:border-none" 
-                        id="phoneno" 
-                        placeholder="Phone No"
+                        id="lastname" 
+                        placeholder="Lastname"
+                        
                       />
+                    </div>
+                    <div className='px-2 flex gap-2 items-center'>
+                        <ReactStars
+                            count={5}
+                            value={4}
+                            size={22}
+                            activeColor="#ffd700"
+                            edit={true}
+                        />
+                        <p className='font-medium text-sm text-gray-500'>Rate your Product</p>
                     </div>
                     <div className="form-group px-2">
                       <textarea 
@@ -79,12 +96,40 @@ function Productpage() {
                       />
                     </div>
                     <div className='px-2 py-2 flex  w-full'>
-                      <Button text="Send" />
+                      <Button text="Publish" />
                     </div>
                   </form>
             </div>
             )}
-            
+            <div className='flex flex-col w-full px-2 py-2 gap-3 divide-y-2 '>
+                <div className='space-y-2'>
+                    <div className='flex gap-2 items-center'>
+                        <p className='font-bold text-base px-2'> Rahul</p>    
+                        <ReactStars
+                                count={5}
+                                value={4}
+                                size={18}
+                                activeColor="#ffd700"
+                                edit={false}
+                                />
+                    </div>
+                    <p className='px-2 text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eveniet autem ex, quisquam magni iure similique commodi aspernatur, veritatis maxime voluptate inventore nemo quia tempore cum. Doloribus ea dicta nulla.</p>
+                </div>
+                <div className='space-y-2'>
+                    <div className='flex gap-2 items-center'>
+                        <p className='font-bold text-base px-2'> Rahul</p>    
+                        <ReactStars
+                                count={5}
+                                value={4}
+                                size={18}
+                                activeColor="#ffd700"
+                                edit={false}
+                                />
+                    </div>
+                    <p className='px-2 text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eveniet autem ex, quisquam magni iure similique commodi aspernatur, veritatis maxime voluptate inventore nemo quia tempore cum. Doloribus ea dicta nulla.</p>
+                </div>
+                
+            </div>
         </div>
 
         {/* Recommended Products */}
