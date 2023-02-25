@@ -13,6 +13,7 @@ import apple3 from "../images/ip143.webp"
 import apple4 from "../images/ip144.webp"
 import apple5 from "../images/ip145.webp"
 import apple6 from "../images/ip6.webp"
+import { RiShareForwardLine } from "react-icons/ri";
 
 const images = [apple1,apple2, apple3, apple4, apple5, apple6,]
 
@@ -22,6 +23,7 @@ function Productpage() {
    const [writereview, setwritereview] = useState(false)
    const [category, setshowcategory] = useState(true)
    const [inthebox, setinthebox] = useState(true)
+   const [Delivery, setDelivery] = useState(true)
 
   return (
     <>
@@ -31,7 +33,7 @@ function Productpage() {
         {/* Product Details */}
         <div className='max-w-7xl mx-auto grid grid-cols-2  md:grid-cols-8 lg:grid-cols-12 '>
             {/* Image Section */}
-            <div className='col-span-2 flex flex-col md:col-span-4 lg:col-span-6 bg-white py-2 px-2'>
+            <div className='col-span-2 flex flex-col md:col-span-4 lg:col-span-6 bg-white rounded-lg md:!rounded-none  md:!rounded-l-lg py-2 px-2'>
                 <div className='border px-2 py-2 border-black relative'>
                     <Zoom
                         img={images[imageindex]}
@@ -59,7 +61,7 @@ function Productpage() {
                 </div>
             </div>
             {/* Product Section */}
-            <div className='col-span-2 md:col-span-4 lg:col-span-6 bg-white py-2 px-2'>
+            <div className='col-span-2 md:col-span-4 lg:col-span-6 bg-white  rounded-lg md:!rounded-none md:!rounded-r-lg py-2 px-2'>
                 <div className='flex flex-col mt-2 divide-y-2'>
                     <div className='flex flex-col px-2 py-2 '>
                         <h2 className='font-bold text-xl'>Apple Iphone 14 pro Max</h2>
@@ -83,12 +85,23 @@ function Productpage() {
                             />
                             <p className='font-normal text-gray-500 text-xs '>( Based on 5 Reviews )</p>
                         </div>
-                        <p
-                            className='hover:underline cursor-pointer'
-                            onClick={() => setwritereview(!writereview)}
-                        >
-                        Write review
-                        </p>
+                        <div className='flex flex-row justify-between'>
+                            <p
+                                className='hover:underline cursor-pointer'
+                                onClick={() => setwritereview(!writereview)}
+                            >
+                            Write review
+                            </p>
+                            <div className='flex flex-row items-center gap-2'>
+                                <RiShareForwardLine className='w-5 h-5 text-gray-500' />
+                                <p 
+                                    className='text-sm text-gray-500 cursor-copy '
+                                    onClick={() => {navigator.clipboard.writeText("text copied")}}
+                                >
+                                    Copy product link
+                                </p>
+                           </div>
+                        </div>
 
 
                     </div>
@@ -168,6 +181,20 @@ function Productpage() {
                                 <li className='text-sm list-disc text-gray-500'>Lighting Cable</li>
                             </ul>
 
+                        </div>
+                        )}
+                    </div>
+                    <div className='flex flex-col mt-2 gap-2 px-2 py-2'>
+                        <div className='flex justify-between items-center'>
+                            <p className='font-bold tracking-wide text-black text-base'>Delivery Details</p>
+                            <MdOutlineArrowDropDownCircle 
+                                className='w-5 h-5 cursor-pointer'
+                                onClick={() => setDelivery(!Delivery)}
+                                /> 
+                        </div>
+                        {Delivery && (
+                        <div className='flex gap-2 px-4  '>
+                            <p>Your Products will take up to 2 or 3 business days to get Delivered</p>
                         </div>
                         )}
                     </div>
