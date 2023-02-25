@@ -4,9 +4,20 @@ import Breadcrumb from '../components/Breadcrumb'
 import Button from '../components/Button'
 import Meta from '../components/Meta'
 import Productcard from '../components/Productcard'
+import Zoom from 'react-img-zoom'
+import { AiOutlineZoomIn } from "react-icons/ai";
+import apple1 from "../images/ip141.webp"
+import apple2 from "../images/ip142.webp"
+import apple3 from "../images/ip143.webp"
+import apple4 from "../images/ip144.webp"
+import apple5 from "../images/ip145.webp"
+import apple6 from "../images/ip6.webp"
+
+const images = [apple1,apple2, apple3, apple4, apple5, apple6,]
 
 function Productpage() {
 
+   const [imageindex, setimageindex] = useState(0) 
    const [writereview, setwritereview] = useState(false)
 
   return (
@@ -16,8 +27,32 @@ function Productpage() {
       <main className='bg-gray-200 py-4 px-2'>
         {/* Product Details */}
         <div className='max-w-7xl mx-auto grid grid-cols-2  md:grid-cols-8 lg:grid-cols-12 '>
-            <div className='col-span-6 bg-white py-2 px-2'></div>
-            <div className='col-span-6 bg-white py-2 px-2'></div>
+            <div className='col-span-2 flex flex-col md:col-span-4 lg:col-span-6 bg-white py-2 px-2'>
+                <div className='border px-2 py-2 border-black relative'>
+                    <Zoom
+                        img={images[imageindex]}
+                        zoomScale={3}
+                        width={600}
+                        height={450}
+                        className="hover:cursor-move "
+                    />
+                    <AiOutlineZoomIn className='w-5 h-5 absolute top-2 left-2 text-gray-500'/>    
+                </div>
+                <div className='flex space-x-2 p-2 overflow-x-scroll scrollbar-hide'>
+                    {images.map((image, index) => (
+                        <div className='px-2 w-[350px] h-[120px] py-2 border border-black'>
+                            <img
+                                src={image}
+                                alt="image"
+                                className='w-[150px] h-[100px] object-contain cursor-pointer'
+                                onClick={(e) => setimageindex(index)}
+                            />
+                        </div>
+                    ))}
+                    
+                </div>
+            </div>
+            {/* <div className='col-span-2 md:col-span-4 lg:col-span-6 bg-white py-2 px-2'></div> */}
         </div>
         {/* Description Section */}
         <div className='flex  max-w-7xl mx-auto mt-2  pt-2'>
