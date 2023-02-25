@@ -75,10 +75,12 @@ function Header() {
                             alt="compare"
                             className='md:w-8 md:h-8 lg:w-9 lg:h-9 h-5 w-5'
                     />
-                    <div className='flex flex-col pl-2'>
-                        <p className='px-[10px] py-[2px] text-center text-xs font-semibold bg-white/75 rounded-full'>0</p>
-                        <p className='text-white pt-1 text-sm'>$ 500</p>
-                    </div>
+                    <NavLink to="/cart">
+                        <div className='flex flex-col pl-2'>
+                            <p className='px-[10px] py-[2px] text-center text-xs font-semibold bg-white/75 rounded-full'>0</p>
+                            <p className='text-white pt-1 text-sm'>$ 500</p>
+                        </div>
+                    </NavLink>
                 </div>
             </div>
             

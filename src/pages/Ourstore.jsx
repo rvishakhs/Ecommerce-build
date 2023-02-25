@@ -16,7 +16,7 @@ function Ourstore() {
   const [filter, setfilter] = useState(true)
   const [Producttags, setproductstags] = useState(false)
   const [Randomproducts, setRandomproducts] = useState(true)
-  const  [grid, setgrid] = useState(3)
+  const  [grid, setgrid] = useState(2)
   const colorarry = ["amber", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"]
   
   return (

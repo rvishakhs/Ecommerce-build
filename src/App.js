@@ -6,6 +6,7 @@ import Meta from './components/Meta';
 import About from './pages/About';
 import Blogpage from './pages/Blogpage';
 import Blogs from './pages/Blogs';
+import Cart from './pages/Cart';
 import Compare from './pages/Compare';
 import Contact from './pages/Contact';
 import Privacypolicy from './pages/Footer/Privacypolicy';
@@ -35,6 +36,7 @@ function App() {
               <Route path='/contact' element={<Contact />}/>
               <Route path='/compare' element={<Compare />}/>
               <Route path='/login' element={<Login />}/>
+              <Route path='/cart' element={<Cart />}/>
               <Route path='/signup' element={<Signup />}/>
               <Route path='/forget-login' element={<Forget />}/>
               <Route path='/privacy-policy' element={<Privacypolicy />}/>
