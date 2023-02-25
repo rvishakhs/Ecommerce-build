@@ -32,7 +32,7 @@ function Productpage() {
                     <Zoom
                         img={images[imageindex]}
                         zoomScale={3}
-                        width={600}
+                        width="100%"
                         height={450}
                         className="hover:cursor-move "
                     />
@@ -40,13 +40,15 @@ function Productpage() {
                 </div>
                 <div className='flex space-x-2 p-2 overflow-x-scroll scrollbar-hide'>
                     {images.map((image, index) => (
-                        <div className='px-2 w-[350px] h-[120px] py-2 border border-black'>
+                        <div >
+                        <div className='px-2 w-[60px] h-[80px] md:w-[120px] md:h-[120px] py-2 border border-black'>
                             <img
                                 src={image}
                                 alt="image"
-                                className='w-[150px] h-[100px] object-contain cursor-pointer'
+                                className='w-[60px] h-[60px] md:w-[100px] md:h-[100px] object-contain cursor-pointer'
                                 onClick={(e) => setimageindex(index)}
                             />
+                        </div>
                         </div>
                     ))}
                     
