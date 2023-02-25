@@ -6,6 +6,7 @@ import Meta from '../components/Meta'
 import Productcard from '../components/Productcard'
 import Zoom from 'react-img-zoom'
 import { AiOutlineZoomIn, AiOutlineHeart } from "react-icons/ai";
+import { MdOutlineArrowDropDownCircle } from "react-icons/md";
 import apple1 from "../images/ip141.webp"
 import apple2 from "../images/ip142.webp"
 import apple3 from "../images/ip143.webp"
@@ -19,6 +20,8 @@ function Productpage() {
 
    const [imageindex, setimageindex] = useState(0) 
    const [writereview, setwritereview] = useState(false)
+   const [category, setshowcategory] = useState(true)
+   const [inthebox, setinthebox] = useState(true)
 
   return (
     <>
@@ -27,6 +30,7 @@ function Productpage() {
       <main className='bg-gray-200 py-4 px-2'>
         {/* Product Details */}
         <div className='max-w-7xl mx-auto grid grid-cols-2  md:grid-cols-8 lg:grid-cols-12 '>
+            {/* Image Section */}
             <div className='col-span-2 flex flex-col md:col-span-4 lg:col-span-6 bg-white py-2 px-2'>
                 <div className='border px-2 py-2 border-black relative'>
                     <Zoom
@@ -54,6 +58,7 @@ function Productpage() {
                     
                 </div>
             </div>
+            {/* Product Section */}
             <div className='col-span-2 md:col-span-4 lg:col-span-6 bg-white py-2 px-2'>
                 <div className='flex flex-col mt-2 divide-y-2'>
                     <div className='flex flex-col px-2 py-2 '>
@@ -125,6 +130,46 @@ function Productpage() {
                                     Add to Wishlist
                                 </button>
                         </div>
+                    </div>
+                    {/* Technical Details */}
+                    <div className='flex flex-col mt-2 gap-2 px-2 py-2'>
+                        <div className='flex justify-between items-center'>
+                            <p className='font-bold tracking-wide text-black text-base'>Technical Details</p>
+                            <MdOutlineArrowDropDownCircle 
+                                className='w-5 h-5 cursor-pointer'
+                                onClick={() => setshowcategory(!category)}
+                                /> 
+                        </div>
+                        {category && (
+                        <div className='flex gap-2 px-4  '>
+                            <ul className='gap-2'>
+                                <li className='text-sm list-disc text-gray-500'>128 GB ROM</li>
+                                <li className='text-sm list-disc text-gray-500'>17.02 cm (6.7 inch) Super Retina XDR Display</li>
+                                <li className='text-sm list-disc text-gray-500'>48MP + 12MP + 12MP + 12MP | 12MP Front Camera</li>
+                                <li className='text-sm list-disc text-gray-500'>A16 Bionic Chip, 6 Core Processor Processor</li>
+                            </ul>
+
+                        </div>
+                        )}
+                    </div>
+                    {/* What's included in the Box */}
+                    <div className='flex flex-col mt-2 gap-2 px-2 py-2'>
+                        <div className='flex justify-between items-center'>
+                            <p className='font-bold tracking-wide text-black text-base'>What's included in the Box</p>
+                            <MdOutlineArrowDropDownCircle 
+                                className='w-5 h-5 cursor-pointer'
+                                onClick={() => setinthebox(!inthebox)}
+                                /> 
+                        </div>
+                        {inthebox && (
+                        <div className='flex gap-2 px-4  '>
+                            <ul className='gap-2'>
+                                <li className='text-sm list-disc text-gray-500'>Mobile</li>
+                                <li className='text-sm list-disc text-gray-500'>Lighting Cable</li>
+                            </ul>
+
+                        </div>
+                        )}
                     </div>
                 </div>
             </div>
