@@ -17,29 +17,30 @@ function Cart() {
                     Your Shopping Bag
                 </p>
                 <div className=' border-b-2 flex flex-row justify-between border-t-2 py-3 px-2 mt-2  border-gray-300'>
-                    <h4 className='w-[40%] font-medium tracking-wide'>Product</h4>
+                    <h4 className='w-[50%] md:w-[40%]  font-medium tracking-wide'>Product</h4>
                     <h4 className='w-[10%] font-medium tracking-wide'>Price</h4>
                     <h4 className='w-[15%] font-medium tracking-wide'>Qty</h4>
                     <h4 className='w-[10%] font-medium tracking-wide'>Total</h4>
                 </div>
                 <div className='flex flex-row justify-between py-3 border-b-2 border-gray-300 px-2 mt-2 space-y-1'>
-                    <div className='w-[40%] flex flex-row'>
+                    <div className='w-[50%] md:w-[40%] flex flex-row items-center'>
                         <img 
                             src={photo}
+
                             alt="cartproductimage"
-                            className='w-[150px] h-[150px] mix-blend-darken'
+                            className='w-[100px] h-[100px] md:w-[150px] md:h-[150px] mix-blend-darken'
                         />
                         <div className='flex flex-col py-3'>
-                            <p className='text-base font-medium text-gray-500'>Apple Watch ultra</p>
-                            <p className='text-base font-medium text-gray-500 mt-2'>Size : <span className=''>128 gb</span></p>
-                            <p className='text-base font-medium text-gray-500'>Color : <span className=''>Orange</span></p>
+                            <p className='text-sm md:text-base font-medium text-gray-500'>Apple Watch ultra</p>
+                            <p className='text-sm md:text-base font-medium text-gray-500 mt-2'>Size : <span className=''>128 gb</span></p>
+                            <p className='text-sm md:text-base font-medium text-gray-500'>Color : <span className=''>Orange</span></p>
                         </div>
 
                     </div>
                     <div className='w-[10%] flex mb-5 items-center'>
-                         <p className=' font-medium text-gray-500 text-lg'>$ 100</p>
+                         <p className=' font-medium text-gray-500 text-sm md:text-lg'>$ 100</p>
                     </div>
-                    <div className='w-[15%] flex mb-5 gap-2 items-center'>
+                    <div className='w-[15%] flex flex-col md:flex-row mb-5 gap-2 items-center justify-center'>
                             <input 
                                 type="number"
                                 name=''
@@ -47,13 +48,13 @@ function Cart() {
                                 max={10}
                                 defaultValue={1}
                                 className="form-control ring-yellow-500 focus:ring-1 bg-gray-300 focus:border-none "
-                                style={{width : "70px"}}
+                                style={{width : "60px"}}
                                 id=""
                             />
                             <FiTrash className='w-5 h-5 hover:scale-105 cursor-pointer'/>
                     </div>
                     <div className='w-[10%] flex mb-5 items-center'>
-                        <p className=' font-medium text-gray-500 text-lg'>$ 100</p>
+                        <p className=' font-medium text-gray-500 text-sm md:text-lg'>$ 100</p>
                     </div>
 
                 </div>

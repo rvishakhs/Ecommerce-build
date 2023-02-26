@@ -26,13 +26,13 @@ function Contact() {
             {/* Contact session */}
             <div className='bg-white px-2 py-2 my-3 gap-2 rounded-xl flex flex-col md:flex-row '>
               {/*Left Side */}
-              <div className='px-2 py-2 w-[50%]'>
+              <div className='px-2 py-2 md:w-[50%] w-full'>
                 <p className='font-bold text-xl px-4 py-2 text-black tracking-wide'>Contact Me</p>
                   <form className='px-2 mt-4 space-y-2'>
                     <div className="form-group px-2">
                       <input 
                         type="text" 
-                        className="form-control bg-gray-200" 
+                        className="form-control bg-gray-200 w-full flex flex-1" 
                         id="Name" 
                         placeholder="Full Name"
                       />
@@ -67,7 +67,7 @@ function Contact() {
                   </form>
               </div>
               {/* Right Side */}
-              <div className='px-2 py-2 w-[50%]'>
+              <div className='px-2 py-2 md:w-[50%] w-full'>
                 <p className='font-bold text-xl px-4 py-2 text-black tracking-wide'>Get In Touch With Me</p>
                 <ul className='space-y-2 mt-4 px-8'>
                   <li 
