@@ -1,11 +1,12 @@
 import React from 'react'
+import { createStyles, Select, TextInput } from '@mantine/core';
 
 
 function Checkoutpage() {
   return (
     <>
         <main className='w-full bg-gray-200 h-screen'>
-            <div className='max-w-7xl grid grid-cols-2 md:grid-cols-6 lg:grid-cols-10 mx-auto px-2 py-4 bg-gray-200'>
+            <div className='max-w-6xl grid grid-cols-2 md:grid-cols-6 lg:grid-cols-10 mx-auto px-2 py-4 bg-gray-200'>
                 {/* Left Side */}
                     <div className='grid col-span-6 bg-white px-2 py-3 h-auto rounded-lg divide-x-2'>
                         <div className='flex flex-col px-4'>
@@ -26,7 +27,17 @@ function Checkoutpage() {
                                 </div>
                                 <div className='flex flex-col gap-2 py-2'>
                                     <h3 className='font-semibold text-xl '>Shipping Address</h3>
-                                    
+                                    <Select
+                                        style={{ marginTop: 10, zIndex: 2 }}
+                                        data={['United States', 'Canada', 'Australia', 'United Kingdom']}
+                                        placeholder="Select one Country"
+                                        label="Select country"
+                                    />
+                                    <TextInput 
+                                        label="Shipping address" 
+                                        placeholder="15329 Huston 21st"  
+                                        className='w-[80%]'    
+                                    />    
                                     
                                 </div>
                             </nav>   
