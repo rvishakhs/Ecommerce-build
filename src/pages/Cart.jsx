@@ -2,6 +2,9 @@ import React from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import photo from "../images/watch2.JPG"
+import { FiTrash } from "react-icons/fi";
+import Button from '../components/Button';
+import { Link } from 'react-router-dom';
 
 function Cart() {
   return (
@@ -19,7 +22,7 @@ function Cart() {
                     <h4 className='w-[15%] font-medium tracking-wide'>Qty</h4>
                     <h4 className='w-[10%] font-medium tracking-wide'>Total</h4>
                 </div>
-                <div className='flex flex-row justify-between py-3 px-2 mt-2 space-y-1'>
+                <div className='flex flex-row justify-between py-3 border-b-2 border-gray-300 px-2 mt-2 space-y-1'>
                     <div className='w-[40%] flex flex-row'>
                         <img 
                             src={photo}
@@ -34,25 +37,49 @@ function Cart() {
 
                     </div>
                     <div className='w-[10%] flex mb-5 items-center'>
-                         <p className='text-base font-medium text-gray-500'>$ 100</p>
+                         <p className=' font-medium text-gray-500 text-lg'>$ 100</p>
                     </div>
-                    <div className='w-[15%] flex mb-5 items-center'>
+                    <div className='w-[15%] flex mb-5 gap-2 items-center'>
                             <input 
                                 type="number"
                                 name=''
                                 min={1}
                                 max={10}
                                 defaultValue={1}
-                                className="form-control ring-yellow-500 focus:ring-1 focus:border-none "
+                                className="form-control ring-yellow-500 focus:ring-1 bg-gray-300 focus:border-none "
                                 style={{width : "70px"}}
                                 id=""
                             />
-                         <p className='text-base font-medium text-gray-500'>$ 100</p>
+                            <FiTrash className='w-5 h-5 hover:scale-105 cursor-pointer'/>
                     </div>
-                    <div className='w-[10%] '>
-
+                    <div className='w-[10%] flex mb-5 items-center'>
+                        <p className=' font-medium text-gray-500 text-lg'>$ 100</p>
                     </div>
 
+                </div>
+                <div className='flex flex-row justify-between py-3 px-2'>
+                        <div className='flex flex-col w-[40%]'>
+                            <Link to="/store">
+                                <Button text="Countinue Shopping"/>
+                            </Link>
+                            <div className="form-group px-2 mt-3">
+                                <textarea 
+                                    className="form-control border border-black bg-gray-200" 
+                                    id="Morecomments" 
+                                    rows="3"
+                                    placeholder='Order Instrutions'
+                                />
+                            </div>
+                        </div>
+                        <div className='flex flex-col mr-4 text-end gap-2'>
+                            <p className='font-bold text-2xl text-gray-500'>Sub Total : <span>$100</span></p>
+                            <p className='font-semibold text-xl text-gray-500'>Taxes and shipping calculated at checkout</p>
+                            <div className='flex justify-end'>
+                                <Link to="/checkout">
+                                    <Button text="Checkout"/>
+                                </Link>
+                            </div>
+                        </div>
                 </div>
             </div>
       </main>
