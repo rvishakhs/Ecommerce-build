@@ -1,15 +1,13 @@
 
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
-import { MdOutlineArrowDropDownCircle } from "react-icons/md";
-import BlogPostHome from '../components/BlogPostHome';
+
 import blog1 from "../images/blog-1.jpg"
 import { useState } from 'react';
 
 
 function Blogpage() {
     
-    const [category, setshowcategory] = useState(true)
   
     return (
 

@@ -38,6 +38,7 @@ function PopularProductts() {
         <div className='col-span-2 w-[250px] h-[330px] relative flex flex-col gap-3 bg-slate-800 rounded-xl my-2'>
                 <img 
                     src={eco}
+                    alt="ecoimage"
                     className="w-[250px] h-[330px] object-fill rounded-xl"
                 />
                 <p className='absolute top-4 left-4 text-white font-medium text-sm font-sans tracking-wider'>15% OFF</p>

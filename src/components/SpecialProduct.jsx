@@ -3,7 +3,7 @@ import watch from "../images/watch1.JPG"
 import ReactStars from "react-rating-stars-component";
 import ProgressBar from "@ramonak/react-progress-bar";
 import Button from './Button';
-import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
+import {  AiOutlineHeart } from "react-icons/ai";
 
 function SpecialProducts() {
   return (

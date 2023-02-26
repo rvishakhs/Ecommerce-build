@@ -1,5 +1,5 @@
 import React from 'react'
-import { createStyles, Select, TextInput } from '@mantine/core';
+import {  Select, TextInput } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import {BiArrowBack} from "react-icons/bi"
 import {HiOutlineHome} from "react-icons/hi"
@@ -22,8 +22,12 @@ function Checkoutpage() {
                             </div>
                             <nav className='px-3' style={{}} aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/cart">Cart </a></li>
-                                    <li class="breadcrumb-item active"  aria-current="page"><a href="/checkout"></a>Shipping</li>
+                                    <Link to="/cart">
+                                        <li class="breadcrumb-item">Cart</li>
+                                    </Link>
+                                    <Link to="/shipping">
+                                        <li class="breadcrumb-item active"  aria-current="page">Shipping</li>
+                                    </Link>
                                     <li class="breadcrumb-item " aria-current="page">Payment</li>
                                 </ol>
                                 <div className='flex flex-col gap-1 border-b-2 border-gray-200 pb-2'>

@@ -50,7 +50,7 @@ function Productpage() {
                             <div className='px-2 w-[60px] h-[80px] md:w-[120px] md:h-[120px] py-2 border border-black'>
                                 <img
                                     src={image}
-                                    alt="image"
+                                    alt="img"
                                     className='w-[60px] h-[60px] md:w-[100px] md:h-[100px] object-contain cursor-pointer'
                                     onClick={(e) => setimageindex(index)}
                                 />
@@ -69,6 +69,7 @@ function Productpage() {
                                 <p className='text-gray-500 font-semibold text-sm'>Brand :<span className='pl-2'>Apple</span></p> 
                                 <img 
                                     src='https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png'
+                                    alt=''
                                     className='w-[40px] h-[40px] object-contain'
                                 />
                             </div>

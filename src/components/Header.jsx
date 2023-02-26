@@ -101,13 +101,14 @@ function Header() {
                     aria-expanded="false">
                     <img 
                         src={menu}
+                        alt="menuimg"
                         className="h-6 w-6"                    />    
                     <span className="text-white me-3 text-sm leading-[18px] font-normal tracking-wider uppercase">Shop Categories</span>
                 </button>
                 <ul className="dropdown-menu bg-slate-700 w-[100%] transform ease-out duration-50">
-                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="#">Action</a></li>
-                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="#">Another action</a></li>
-                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="#">Something else here</a></li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Action</a></li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Another action</a></li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Something else here</a></li>
                 </ul>
             </div>
             <div className='flex items-center flex-row gap-x-4'>

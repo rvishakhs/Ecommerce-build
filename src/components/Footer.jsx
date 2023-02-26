@@ -97,10 +97,12 @@ function Footer() {
                 <div className='flex flex-row mt-2 space-x-2'>
                     <img
                         src={google}
+                        alt="google"
                         className="w-15 h-10 "
                     />
                     <img
                         src={apple}
+                        alt="apple"
                         className="w-15 h-10 "
                     />
                 </div>

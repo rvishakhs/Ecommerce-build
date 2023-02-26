@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import { MdOutlineArrowDropDownCircle } from "react-icons/md";
-import { BiSort,BiSortUp,BiSortDown,BiSortAZ  } from "react-icons/bi";
 import RandomProducts from '../components/RandomProducts';
 import Productcard from '../components/Productcard';
 import gr from "../images/gr.svg"

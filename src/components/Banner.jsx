@@ -12,6 +12,7 @@ function Banner() {
         <div className=' col-span-2 lg:col-span-2 md:col-span-4 relative'>
             <img 
                 src={main1}
+                alt="img"
                 className="w-[620px] h-[425px] rounded-xl object-cover"
             />
             <div className='absolute flex flex-col top-[10%] md:top-[15%] left-8 md:left-12'>
@@ -28,6 +29,7 @@ function Banner() {
             <div className='grid space-x-2 relative hover:scale-105 cursor-pointer transition duration-200 ease-in' >
                 <img 
                     src={subimg1}
+                    alt="img"
                     className=" !w-[300px] h-[200px] rounded-xl object-cover"
                 />
                 <div className='absolute flex flex-col top-[8%] left-4'>
@@ -40,6 +42,7 @@ function Banner() {
             <div className='grid relative hover:scale-105 cursor-pointer  transition duration-200 ease-in' >
                 <img 
                     src={subimg2}
+                    alt="img2"
                     className="w-[300px] h-[200px] rounded-xl object-cover"
                 />
                 <div className='absolute flex flex-col top-[8%] left-4'>
@@ -52,6 +55,7 @@ function Banner() {
             <div className='grid relative hover:scale-105 cursor-pointer  transition duration-200 ease-in' >
                 <img 
                     src={subimg3}
+                    alt="img3"
                     className="w-[300px] h-[200px] rounded-xl object-cover"
                 />
                 <div className='absolute flex flex-col top-[8%] left-4'>
@@ -64,6 +68,7 @@ function Banner() {
             <div className='grid  relative hover:scale-105 cursor-pointer  transition duration-200 ease-in' >
                 <img 
                     src={subimg4}
+                    alt="img5"
                     className="w-[300px] h-[200px] rounded-xl object-cover"
                 />
                 <div className='absolute flex flex-col top-[8%] left-4'>
