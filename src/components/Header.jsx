@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import compare from '../images/compare.svg'
 import wishlist from '../images/wishlist.svg'
@@ -9,8 +9,11 @@ import menu from '../images/menu.svg'
 
 
 function Header() {
+
+    let location = useLocation();
+
   return (
-    <div className='w-full'>
+    <div className={` ${location.pathname === "/checkout" ? "hidden" : "w-full"}`}>
         <div className='flex mx-auto flex-row text-sm bg-slate-800 py-2 justify-between px-4 md:px-24 lg:px-32  border-b-2 border-white/70'>
             <div className='flex flex-col md:flex-row space-x-4 justify-between'>
                 <p className='text-white font-sans'>This website made only for Educational Purpose, for more information check About tab</p>

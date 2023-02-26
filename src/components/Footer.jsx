@@ -2,16 +2,19 @@ import React from 'react'
 import { FaRegPaperPlane, FaInstagram, FaFacebookSquare, FaGithub , FaLinkedin } from "react-icons/fa";
 import google from "../images/playstore.png"
 import apple from "../images/apple.png"
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 const informationlinks = [{name: "Privacy Policy", link : "Privacy-Policy"}, {name: "Return Policy", link : "Return-Policy"}, {name: "Shipping Policy", link : "shipping-Policy"}, {name: "Terms & Conditions", link : "terms&Conditions"}, {name: "Blogs", link : "blogs"}  ]
 const Accountlinks = ["Search", "About Us", "FAQ", "Contact", "Size Chart"]
 const Quicklinks = ["Accessories", "Laptops", "Smartphones", "Headphones", "Tablets"]
 
+
+
 function Footer() {
+    let location = useLocation()
   return (
-    <div className='bg-slate-700  bottom-0 w-[390px]  md:w-full  flex flex-col justify-between'>
+    <div className={` ${location.pathname === "/checkout" ? "hidden" : "bg-slate-700  bottom-0 w-[390px]  md:w-full  flex flex-col justify-between"}  `}>
         {/* Footer First Section Newsletter */}
         <div className='py-4 px-4 md:!px-16 lg:!px-24 flex flex-col lg:flex-row w-full mx-auto border-b border-gray-400 '>
             <div className='flex space-x-4 py-2 items-center mx-auto'>

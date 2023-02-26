@@ -7,6 +7,7 @@ import About from './pages/About';
 import Blogpage from './pages/Blogpage';
 import Blogs from './pages/Blogs';
 import Cart from './pages/Cart';
+import Checkoutpage from './pages/Chekout/Checkoutpage';
 import Compare from './pages/Compare';
 import Contact from './pages/Contact';
 import Privacypolicy from './pages/Footer/Privacypolicy';
@@ -21,7 +22,10 @@ import Productpage from './pages/Productpage,';
 import Signup from './pages/Signup';
 
 function App() {
+  
+  
   return (
+    <>
     <div className="m-0">
       <BrowserRouter>
         <Header />
@@ -43,11 +47,13 @@ function App() {
               <Route path='/Return-policy' element={<Refundpolicy />}/>
               <Route path='/Shipping-policy' element={<Shipping />}/>
               <Route path='/Terms&Conditions' element={<Terms />}/>
+              <Route path='/checkout' element={<Checkoutpage />}/>
+             
           </Routes>
         <Footer />
       </BrowserRouter>
-
     </div>
+    </>
   );
 }
 
