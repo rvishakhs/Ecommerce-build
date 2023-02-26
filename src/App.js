@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Cartmenu from './components/Cartmenu';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Meta from './components/Meta';
@@ -47,8 +48,7 @@ function App() {
               <Route path='/Return-policy' element={<Refundpolicy />}/>
               <Route path='/Shipping-policy' element={<Shipping />}/>
               <Route path='/Terms&Conditions' element={<Terms />}/>
-              <Route path='/checkout' element={<Checkoutpage />}/>
-             
+              <Route path='/checkout' element={<Checkoutpage />}/>                        
           </Routes>
         <Footer />
       </BrowserRouter>
