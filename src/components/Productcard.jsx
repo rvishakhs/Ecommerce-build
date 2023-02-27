@@ -45,7 +45,7 @@ function Productcard({grid}) {
             <p className={`font-normal text-sm text-gray-500 text-justify py-2 ${grid === 10 ? "block" : "hidden"}`}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>       
             <p className='font-bold text-gray-500 '> $ 800</p>
         </div>
-        <div className='absolute flex items-center top-4 right-3'>
+        <div className='absolute flex items-center top-4 '>
             <AiOutlineHeart
                 className={`${grid === 2 ? "w-5 h-5 cursor-pointer hover:scale-105" : "w-6 h-6 cursor-pointer hover:scale-105"} `}
                 />
