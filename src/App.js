@@ -20,6 +20,8 @@ import Login from './pages/Login';
 import Ourstore from './pages/Ourstore';
 import Productpage from './pages/Productpage,';
 import Signup from './pages/Signup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   
@@ -49,6 +51,18 @@ function App() {
               <Route path='/Terms&Conditions' element={<Terms />}/>
               <Route path='/checkout' element={<Checkoutpage />}/>                        
           </Routes>
+          <ToastContainer 
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light" 
+          />
         <Footer />
       </BrowserRouter>
     </div>
