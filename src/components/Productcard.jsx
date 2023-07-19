@@ -12,13 +12,13 @@ import { addtowishlist } from '../features/products/producrtSlice';
 function Productcard({grid, data}) {
     const dispatch = useDispatch()
     let location = useLocation();
-    const addwishlist = (id, e) => {
+    const addwishlist = (id) => {
          
          dispatch(addtowishlist(id))
     }
         return (
         <>
-        {data?.map((item, index) => (
+        {data && data.map((item, index) => (
             <div className={`${location.pathname === "/store" ? `col-span-${grid}  ${grid === 2 ? "flex flex-col" : "flex flex-row"} relative  group bg-white rounded-xl my-2 ` 
             : "w-[250px] h-[330px] group relative gap-3 bg-white rounded-xl my-2"}`}> 
 

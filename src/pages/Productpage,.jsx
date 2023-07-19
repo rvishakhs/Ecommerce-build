@@ -56,8 +56,7 @@ function Productpage() {
                                 />
                             </div>
                         </div>
-                    ))}
-                    
+                    ))}    
                 </div>
             </div>
             {/* Product Section */}
@@ -320,11 +319,6 @@ function Productpage() {
             <h1 className='font-bold text-xl tracking-wide font-sans  '>Recommended Products</h1>
         </div>
         <div className='flex rounded-lg max-w-7xl mx-auto mt-3 overflow-x-scroll scrollbar-hide w-full px-4 py-2 bg-white'>
-            <Productcard />
-            <Productcard />
-            <Productcard />
-            <Productcard />
-            <Productcard />
             <Productcard />
             <Productcard />
         </div>
