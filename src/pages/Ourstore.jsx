@@ -1,22 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import { MdOutlineArrowDropDownCircle } from "react-icons/md";
 import RandomProducts from '../components/RandomProducts';
 import Productcard from '../components/Productcard';
+import { useDispatch, useSelector } from 'react-redux';
 import gr from "../images/gr.svg"
 import gr1 from "../images/gr2.svg"
 import gr2 from "../images/gr3.svg"
 import gr3 from "../images/gr4.svg"
+import { fetchproducts } from '../features/products/producrtSlice';
 
 function Ourstore() {
-
+  const dispatch = useDispatch()
+  const productState = useSelector((state) => state.products.product)
   const [category, setshowcategory] = useState(true)
   const [filter, setfilter] = useState(true)
   const [Producttags, setproductstags] = useState(false)
   const [Randomproducts, setRandomproducts] = useState(true)
   const  [grid, setgrid] = useState(2)
   const colorarry = ["amber", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"]
+  
+  const getproducts = () => {
+    dispatch(fetchproducts())
+  }
+  
+  useEffect(() => {
+    getproducts()
+  }, [])
   
   return (
 
@@ -217,11 +228,7 @@ function Ourstore() {
                 </div>
               {/* Products items   */}
                 <div className={`grid w-full grid-cols-2 md:grid-cols-6 gap-2 lg:grid-cols-10 flex-wrap`}>
-                    <Productcard grid={grid} />        
-                    <Productcard grid={grid} />        
-                    <Productcard grid={grid} />        
-                    <Productcard grid={grid} />        
-                    <Productcard grid={grid} />        
+                    <Productcard data={productState? productState : []} grid={grid}  />           
                 </div>
             </div>
         </div>

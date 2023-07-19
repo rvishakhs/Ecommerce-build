@@ -72,7 +72,9 @@ function Header() {
                         className='md:w-8 md:h-8 lg:w-9 lg:h-9 h-5 w-5'
                     />
                     <NavLink to="/login">
-                        <p className='text-left font-sans text-xs md:text-sm text-white'>Log In<br/>My Account</p>
+                        <p className='text-left font-sans text-xs md:text-sm text-white'>Log In<br/>
+                        My Account
+                        </p>
                     </NavLink>
                 </div>
                 <div className='flex items-center '>

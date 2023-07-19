@@ -5,6 +5,8 @@ import { toast } from 'react-toastify'
 
 // This is an THUNK function when user call the "auth/register" will call the register function defined on the userservice 
 
+
+
 export const registeruser = createAsyncThunk("auth/register", async(userData, thunkAPI) => {
     try {
         return await authService.register(userData)
@@ -21,9 +23,11 @@ export const loginuser = createAsyncThunk("auth/login", async(userData, thunkAPI
     }
 })
 
+const getuserFromLocalStorage = localStorage.getItem("customer") ? JSON.parse(localStorage.getItem("customer")) : null
+
 // Initial state of auth service
 const initialstate = {
-    user : "",
+    user : getuserFromLocalStorage,
     isLoading : false,
     isError : false,
     isSucess : false,

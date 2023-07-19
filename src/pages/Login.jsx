@@ -21,7 +21,6 @@ function Login() {
     },
     validationSchema: loginSchema,
     onSubmit: values => {
-      alert(JSON.stringify(values));
       dispatch(loginuser(values));
       formik.handleReset()
     },
