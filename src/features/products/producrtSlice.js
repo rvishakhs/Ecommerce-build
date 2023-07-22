@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { productService } from './productService'
 
-
 // This is an THUNK function when user call the "auth/register" will call the register function defined on the userservice 
 
 export const fetchproducts = createAsyncThunk("products/fetch", async(thunkAPI) => {
@@ -76,23 +75,6 @@ export const productsSlice = createSlice({
         state.isSucess = false;
         state.isError = true;
         state.message = action.error 
-        // State management incase of failure to add into wishlist  
-      }).addCase(addtowishlist.pending,(state) => {
-        state.isLoading = true;
-      }).addCase(addtowishlist.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSucess = true;
-        state.isError = false;
-        state.addtowishlist = action.payload;
-        state.message = "Product added to wishlist"
-
-        state.product = action.payload; 
-        // This case for adding to wishlist 
-      }).addCase(addtowishlist.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isSucess = false;
-        state.isError = true;
-        state.message = action.error; 
         // State management incase of failure to add into wishlist  
       }).addCase(getwishlistprod.pending,(state) => {
         state.isLoading = true;

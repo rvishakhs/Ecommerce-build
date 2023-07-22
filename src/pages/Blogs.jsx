@@ -1,16 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import { MdOutlineArrowDropDownCircle } from "react-icons/md";
 import BlogPostHome from '../components/BlogPostHome';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchblogs } from '../features/blogs/blogSlice';
 
 
 function Blogs() {
     
     const [category, setshowcategory] = useState(true)
-  
-    return (
+    const dispatch = useDispatch()
 
+    const blogState = useSelector((state) => state?.blog?.blogs)
+
+    const fetchblogposts = () => {
+      dispatch(fetchblogs())
+    }
+
+
+    useEffect(() => {
+      fetchblogposts()
+    }, [])
+
+    return (
     <>
       <Meta head="Blogs | Ecomm"/>
       <Breadcrumb tittle="Blogs" />
@@ -42,12 +55,13 @@ function Blogs() {
             </div>
             {/* Right Section */}
             <div className='col-span-2 md:col-span-5 mx-1 !md:mx-0 lg:mx-0 lg:col-span-9 flex flex-col items-center py-2'>
-                <div className={`grid w-full grid-cols-2 md:grid-cols-6 gap-2 lg:grid-cols-10 flex-wrap`}>
-                    <BlogPostHome />
-                    <BlogPostHome />
-                    <BlogPostHome />
-                    <BlogPostHome />
-                </div>   
+                  {blogState && blogState?.map((item, index) => {
+                    return (
+                      <div key={index} className={`grid w-full grid-cols-2 md:grid-cols-6 gap-2 lg:grid-cols-10 flex-wrap`}>
+                        <BlogPostHome id={item?._id} tittle={item?.tittle} desc={item?.description} img={item.image[0].url} date={item.createdAt} />
+                      </div>   
+                    )
+                  })}
             </div>
         </div>
       </main>

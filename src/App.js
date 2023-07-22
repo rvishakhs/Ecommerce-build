@@ -9,6 +9,7 @@ import Blogs from './pages/Blogs';
 import Cart from './pages/Cart';
 import Checkoutpage from './pages/Chekout/Checkoutpage';
 import Compare from './pages/Compare';
+import Wishlist from './pages/Wishlist';
 import Contact from './pages/Contact';
 import Privacypolicy from './pages/Footer/Privacypolicy';
 import Refundpolicy from './pages/Footer/Refundpolicy';
@@ -41,6 +42,7 @@ function App() {
               <Route path='/about' element={<About />}/>
               <Route path='/contact' element={<Contact />}/>
               <Route path='/compare' element={<Compare />}/>
+              <Route path='/wishlist' element={<Wishlist />}/>
               <Route path='/login' element={<Login />}/>
               <Route path='/cart' element={<Cart />}/>
               <Route path='/signup' element={<Signup />}/>

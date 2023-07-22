@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Banner from '../components/Banner'
 import BlogPostHome from '../components/BlogPostHome'
 import MarqueeSection from '../components/MarqueeSection'
@@ -9,8 +9,25 @@ import Productcard from '../components/Productcard'
 import SpecialProducts from '../components/SpecialProduct'
 import PopularProductts from '../components/PopularProductts'
 import PosterPage from '../components/PosterPage'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchblogs } from '../features/blogs/blogSlice';
 
 function Home() {
+
+    const dispatch = useDispatch()
+
+    const blogState = useSelector((state) => state?.blog?.blogs)
+
+    const fetchblogposts = () => {
+        dispatch(fetchblogs())
+      }
+
+
+  
+      useEffect(() => {
+        fetchblogposts()
+      }, [])
+  
   return (
     <div className='w-full h-full'>
         <div className='max-w-[1350px] mx-auto my-4'>
@@ -104,18 +121,13 @@ function Home() {
                     </div>
                 </div>
                 <div className='grid grid-cols-2 px-2 gap-3 flex-wrap md:grid-cols-4 lg:grid-cols-8'>
-                    <div className='col-span-2'>
-                        <BlogPostHome />
-                    </div>
-                    <div className='col-span-2'>
-                        <BlogPostHome />
-                    </div>
-                    <div className='col-span-2'>
-                        <BlogPostHome />
-                    </div>
-                    <div className='col-span-2'>
-                        <BlogPostHome />
-                    </div>
+                    {blogState && blogState?.map((item, index) => {
+                        return (
+                            <div key={index} className='col-span-2'>
+                            <BlogPostHome id={item?._id} tittle={item?.tittle} desc={item?.description} img={item.image[0].url} date={item.createdAt} />
+                            </div>
+                        )
+                    })}
                 </div>               
             </div>
         </div>
