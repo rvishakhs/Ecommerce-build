@@ -5,8 +5,35 @@ import Meta from '../components/Meta'
 import { GoHome } from "react-icons/go";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsTelephoneForward, BsInfoCircle } from "react-icons/bs";
+import * as Yup from 'yup';
+import { useFormik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { enquiry } from '../features/enquiry/enquirySlice';
+
+let contactSchema = Yup.object({
+  email: Yup.string().email("Email Id should be valid").required("Email Id is required"),
+  tittle: Yup.string().required("First Name is required"),
+  mobile: Yup.string().required("Enter a valid Mobile Number"),
+  comments: Yup.string().required("Add some comments"),
+});
 
 function Contact() {
+  const dispatch = useDispatch()
+
+  const formik = useFormik({
+    initialValues: {
+      tittle : '',
+      email: '',
+      mobile : '',
+      comments: '',
+    },
+    validationSchema: contactSchema,
+    onSubmit: values => {
+      dispatch(enquiry(values))
+      formik.handleReset()
+    },
+  })
+
   return (
     <>
       <Meta head="Contact us"/>
@@ -28,38 +55,66 @@ function Contact() {
               {/*Left Side */}
               <div className='px-2 py-2 md:w-[50%] w-full'>
                 <p className='font-bold text-xl px-4 py-2 text-black tracking-wide'>Contact Me</p>
-                  <form className='px-2 mt-4 space-y-2'>
+                  <form onSubmit={formik.handleSubmit} className='px-2 mt-4 space-y-2'>
                     <div className="form-group px-2">
                       <input 
                         type="text" 
                         className="form-control bg-gray-200 w-full flex flex-1" 
-                        id="Name" 
+                        id="tittle" 
                         placeholder="Full Name"
+                        name='tittle' 
+                        value={formik.values.tittle}
+                        onChange={formik.handleChange("tittle")}
+                        onBlur={formik.handleBlur("tittle")}
                       />
+                    </div>
+                    <div className='error text-red-400 ml-2 text-xs'>
+                        {formik.touched.tittle && formik.errors.tittle}
                     </div>
                     <div className="form-group px-2">
                       <input 
                         type="email" 
                         className="form-control bg-gray-200" 
-                        id="Email" 
-                        placeholder="Email id"
+                        id="email" 
+                        name='email' 
+                        placeholder="Email"
+                        value={formik.values.email}
+                        onChange={formik.handleChange("email")}
+                        onBlur={formik.handleBlur("email")}
                       />
+                    </div>
+                    <div className='error text-red-400 ml-2 text-xs'>
+                        {formik.touched.email && formik.errors.email}
                     </div>
                     <div className="form-group px-2">
                       <input 
                         type="tel" 
                         className="form-control bg-gray-200" 
-                        id="phoneno" 
-                        placeholder="Phone No"
+                        id="mobile" 
+                        name='mobile' 
+                        placeholder="Mobile No"
+                        value={formik.values.mobile}
+                        onChange={formik.handleChange("mobile")}
+                        onBlur={formik.handleBlur("mobile")}
                       />
+                    </div>
+                    <div className='error text-red-400 ml-2 text-xs'>
+                        {formik.touched.mobile && formik.errors.mobile}
                     </div>
                     <div className="form-group px-2">
                       <textarea 
                         className="form-control bg-gray-200" 
-                        id="exampleFormControlTextarea1" 
+                        id="comments" 
                         rows="3"
-                        placeholder='Comments'
+                        name='comments' 
+                        placeholder="Description"
+                        value={formik.values.comments}
+                        onChange={formik.handleChange("comments")}
+                        onBlur={formik.handleBlur("comments")}
                       />
+                    </div>
+                    <div className='error text-red-400 ml-2 text-xs'>
+                        {formik.touched.comments && formik.errors.comments}
                     </div>
                     <div className='px-2 py-2'>
                       <Button text="Send" />
