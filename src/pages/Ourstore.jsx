@@ -227,10 +227,22 @@ function Ourstore() {
                   </div>
                 </div>
               {/* Products items   */}
-                <div className={`grid w-full grid-cols-2 md:grid-cols-6 gap-2 lg:grid-cols-10 flex-wrap`}>
-                    <Productcard data={productState? productState : []} grid={grid}  />           
-                </div>
-            </div>
+              <div className={`grid w-full grid-cols-2 md:grid-cols-6 gap-2 lg:grid-cols-10 flex-wrap`}>
+              {productState && productState?.map((item, index) => {
+                  return(
+                      <Productcard 
+                        grid={grid}
+                        id={item?._id}
+                        brand={item?.brand} 
+                        tittle={item?.tittle} 
+                        rating={item?.totalrating} 
+                        desc={item?.description} 
+                        price={item?.price}
+                        /> 
+                  )             
+                    })}    
+              </div>
+             </div>
         </div>
       </main>
     </>

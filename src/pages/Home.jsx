@@ -11,21 +11,27 @@ import PopularProductts from '../components/PopularProductts'
 import PosterPage from '../components/PosterPage'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchblogs } from '../features/blogs/blogSlice';
+import { fetchproducts } from '../features/products/producrtSlice'
 
 function Home() {
 
     const dispatch = useDispatch()
 
     const blogState = useSelector((state) => state?.blog?.blogs)
+    const productsState = useSelector((state) => state?.products?.product)
+
+    console.log(productsState);
 
     const fetchblogposts = () => {
         dispatch(fetchblogs())
       }
-
-
-  
+    
+    const fetchspecialproducts = () => {
+        dispatch(fetchproducts())
+    }  
       useEffect(() => {
         fetchblogposts()
+        fetchspecialproducts()
       }, [])
   
   return (
@@ -57,21 +63,22 @@ function Home() {
                     </div>
                 </div>
                 <div className='grid grid-cols-2  px-2 gap-3 md:grid-cols-6  lg:grid-cols-10'>
-                    <div className='col-span-2'>
-                        <Productcard />
-                    </div>
-                    <div className='col-span-2'>
-                        <Productcard />
-                    </div>
-                    <div className='col-span-2'>
-                        <Productcard />
-                    </div>
-                    <div className='col-span-2'>
-                        <Productcard />
-                    </div>
-                    <div className='col-span-2'>
-                        <Productcard />
-                    </div>
+                    {productsState && productsState?.map((item, index) => {
+                        if(item?.tag === "Featured"){
+                            return(
+                                <div key={index}className='col-span-2'>
+                                    <Productcard 
+                                            id={item?._id}
+                                            brand={item?.brand} 
+                                            tittle={item?.tittle} 
+                                            rating={item?.totalrating} 
+                                            desc={item?.description} 
+                                            price={item?.price}
+                                        />
+                                </div>
+                            )
+                        }                                     
+                    })}
                 </div>               
             </div>
 
@@ -124,7 +131,7 @@ function Home() {
                     {blogState && blogState?.map((item, index) => {
                         return (
                             <div key={index} className='col-span-2'>
-                            <BlogPostHome id={item?._id} tittle={item?.tittle} desc={item?.description} img={item.image[0].url} date={item.createdAt} />
+                                <BlogPostHome id={item?._id} tittle={item?.tittle} desc={item?.description} img={item.image[0].url} date={item.createdAt} />
                             </div>
                         )
                     })}
