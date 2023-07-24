@@ -11,6 +11,16 @@ export const fetchproducts = createAsyncThunk("products/fetch", async(thunkAPI) 
     }
 })
 
+// This route fuction is used to fetch single product and this is an intermediate funtion getting response from RESTAPI and store in to redux store 
+
+export const fetchsingleproduct = createAsyncThunk("product/single", async(prodid, thunkAPI) => {
+  try {
+      return await productService.getsingleproduct(prodid)
+  } catch (err) {
+      return  thunkAPI.rejectWithValue(err)
+  }
+})
+
 // Add to wishlist Functionality 
 export const addtowishlist = createAsyncThunk("product/wishlist", async( thunkAPI) => {
     try {
@@ -93,6 +103,23 @@ export const productsSlice = createSlice({
         state.isError = true;
         state.message = action.error; 
         // State management incase of failure to add into wishlist  
+      }).addCase(fetchsingleproduct.pending,(state) => {
+        state.isLoading = true;
+      }).addCase(fetchsingleproduct.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSucess = true;
+        state.isError = false;
+        state.singleproduct = action.payload;
+        state.message = "Product added to wishlist"
+
+        state.product = action.payload; 
+        // This case for fetching single product and response generated will be saved into singleproduct in products state 
+      }).addCase(fetchsingleproduct.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isSucess = false;
+        state.isError = true;
+        state.message = action.error; 
+        // This state management is for in case the response have some issues   
       })
     },
   })

@@ -10,10 +10,12 @@ import gr1 from "../images/gr2.svg"
 import gr2 from "../images/gr3.svg"
 import gr3 from "../images/gr4.svg"
 import { fetchproducts } from '../features/products/producrtSlice';
+import { useLocation } from 'react-router-dom';
 
 function Ourstore() {
   const dispatch = useDispatch()
-  const productState = useSelector((state) => state.products.product)
+  const location = useLocation()
+  const productState = useSelector((state) => state?.products?.product)
   const [category, setshowcategory] = useState(true)
   const [filter, setfilter] = useState(true)
   const [Producttags, setproductstags] = useState(false)
@@ -22,11 +24,14 @@ function Ourstore() {
   const colorarry = ["amber", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"]
   
   const getproducts = () => {
-    dispatch(fetchproducts())
+     dispatch(fetchproducts())
   }
+
+
   
   useEffect(() => {
-    getproducts()
+     getproducts()
+     setInterval(getproducts, 5000)
   }, [])
   
   return (

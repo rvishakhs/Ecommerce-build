@@ -10,9 +10,18 @@ const getallproducts = async() => {
         return response.data
     } 
 } 
+
+// Fucntion to fetch single Product 
+const getsingleproduct = async(id) => {
+    const response = await axios.get(`${base_url}product/${id}`,);
+    if (response.data) {
+        return response.data
+    } 
+} 
+
 // Adding to wishlist
 const addtowishlist = async (productid) => {
-    const response = await axios.put(`${base_url}product/` , {productid}, config)
+    const response = await axios.put(`${base_url}product/` , productid, config)
     if (response.data) {
         return response.data
     }
@@ -27,6 +36,7 @@ const getwishlist = async () => {
 
 export const productService = {
     getallproducts,
+    getsingleproduct,
     addtowishlist,
     getwishlist
 }

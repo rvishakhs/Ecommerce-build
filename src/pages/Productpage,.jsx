@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactStars from 'react-rating-stars-component'
 import Breadcrumb from '../components/Breadcrumb'
 import Button from '../components/Button'
@@ -14,6 +14,9 @@ import apple4 from "../images/ip144.webp"
 import apple5 from "../images/ip145.webp"
 import apple6 from "../images/ip6.webp"
 import { RiShareForwardLine } from "react-icons/ri";
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { fetchsingleproduct } from '../features/products/producrtSlice'
 
 const images = [apple1,apple2, apple3, apple4, apple5, apple6,]
 
@@ -24,6 +27,26 @@ function Productpage() {
    const [category, setshowcategory] = useState(true)
    const [inthebox, setinthebox] = useState(true)
    const [Delivery, setDelivery] = useState(true)
+
+//    This section is for state management like fetching products by product id
+// and grabbing id from url
+
+   const dispatch = useDispatch()
+   const location = useLocation()
+
+//    For fetching productid from URL 
+    const getprodid = location.pathname.split("/")[2]
+    console.log(getprodid);
+
+
+// Fetching product data 
+const fetchproduct = () => {
+    dispatch(fetchsingleproduct(getprodid))
+  }
+
+useEffect(() => {
+    fetchproduct()
+}, [getprodid])
 
   return (
     <>
