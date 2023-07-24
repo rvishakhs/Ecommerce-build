@@ -77,8 +77,6 @@ export const productsSlice = createSlice({
         state.isError = false;
         state.addtowishlist = action.payload;
         state.message = "Product added to wishlist"
-
-        state.product = action.payload; 
         // This case for adding to wishlist 
       }).addCase(addtowishlist.rejected, (state, action) => {
         state.isLoading = false;
@@ -94,8 +92,6 @@ export const productsSlice = createSlice({
         state.isError = false;
         state.addtowishlist = action.payload;
         state.message = "Product added to wishlist"
-
-        state.product = action.payload; 
         // This case for adding to wishlist 
       }).addCase(getwishlistprod.rejected, (state, action) => {
         state.isLoading = false;
@@ -111,8 +107,6 @@ export const productsSlice = createSlice({
         state.isError = false;
         state.singleproduct = action.payload;
         state.message = "Product added to wishlist"
-
-        state.product = action.payload; 
         // This case for fetching single product and response generated will be saved into singleproduct in products state 
       }).addCase(fetchsingleproduct.rejected, (state, action) => {
         state.isLoading = false;

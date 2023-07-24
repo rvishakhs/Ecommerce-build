@@ -10,7 +10,7 @@ import gr1 from "../images/gr2.svg"
 import gr2 from "../images/gr3.svg"
 import gr3 from "../images/gr4.svg"
 import { fetchproducts } from '../features/products/producrtSlice';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Ourstore() {
   const dispatch = useDispatch()
@@ -31,7 +31,6 @@ function Ourstore() {
   
   useEffect(() => {
      getproducts()
-     setInterval(getproducts, 5000)
   }, [])
   
   return (
@@ -177,9 +176,21 @@ function Ourstore() {
                     </div>
                     {Randomproducts && (
                       <div className='py-2 flex divide-y-2 flex-col'>
-                          <RandomProducts />
-                          <RandomProducts />
-                          <RandomProducts />
+                        {productState && productState?.map((item, index)=> {
+                          return (
+                            <>
+                            <Link to={`/product/${item?._id}`}>
+                              <RandomProducts
+                                id={item.id}
+                                tittle={item?.tittle}
+                                ratings={item?.rating}
+                                price={item?.price}
+                                img={item?.image[0]?.url}
+                              />
+                            </Link>
+                            </>
+                          )
+                        })} 
                       </div>
                     )}
 

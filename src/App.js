@@ -23,6 +23,7 @@ import Productpage from './pages/Productpage,';
 import Signup from './pages/Signup';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   
@@ -32,6 +33,7 @@ function App() {
     <div className="m-0">
       <BrowserRouter>
         <Header />
+        <ScrollToTop />
         <Meta head={"Eshoppers"} />
           <Routes>
               <Route path='/' element={<Home />}/>

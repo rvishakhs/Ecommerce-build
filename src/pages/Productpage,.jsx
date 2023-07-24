@@ -15,8 +15,8 @@ import apple5 from "../images/ip145.webp"
 import apple6 from "../images/ip6.webp"
 import { RiShareForwardLine } from "react-icons/ri";
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import { fetchsingleproduct } from '../features/products/producrtSlice'
+import { Link, useLocation } from 'react-router-dom';
+import { fetchproducts, fetchsingleproduct } from '../features/products/producrtSlice'
 
 const images = [apple1,apple2, apple3, apple4, apple5, apple6,]
 
@@ -36,22 +36,29 @@ function Productpage() {
 
 //    For fetching productid from URL 
     const getprodid = location.pathname.split("/")[2]
-    console.log(getprodid);
-
-
+    const prodData = useSelector((state) => state?.products?.singleproduct)
+    const productState = useSelector((state) => state?.products?.product)
 // Fetching product data 
-const fetchproduct = () => {
+
+const getproducts = () => {
+     dispatch(fetchproducts())
+}
+
+const fetchsinproduct = () => {
     dispatch(fetchsingleproduct(getprodid))
   }
 
+
+
 useEffect(() => {
-    fetchproduct()
+    getproducts()
+    fetchsinproduct()
 }, [getprodid])
 
   return (
     <>
       <Meta head="Product | Ecomm"/>
-      <Breadcrumb tittle="Store > ProductName" />
+      <Breadcrumb tittle={`Store > ${prodData?.tittle}`} />
       <main className='bg-gray-200 py-4 px-2'>
         {/* Product Details */}
         <div className='max-w-7xl mx-auto grid grid-cols-2  md:grid-cols-8 lg:grid-cols-12 '>
@@ -86,9 +93,9 @@ useEffect(() => {
             <div className='col-span-2 md:col-span-4 lg:col-span-6 bg-white  rounded-lg md:!rounded-none md:!rounded-r-lg py-2 px-2'>
                 <div className='flex flex-col mt-2 divide-y-2'>
                     <div className='flex flex-col px-2 py-2 '>
-                        <h2 className='font-bold text-xl'>Apple Iphone 14 pro Max</h2>
+                        <h2 className='font-bold text-xl'>{prodData?.tittle}</h2>
                             <div className='flex flex-row items-center space-x-2'>
-                                <p className='text-gray-500 font-semibold text-sm'>Brand :<span className='pl-2'>Apple</span></p> 
+                                <p className='text-gray-500 font-semibold text-sm'>Brand :<span className='pl-2'>{prodData?.brand}</span></p> 
                                 <img 
                                     src='https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png'
                                     alt=''
@@ -97,7 +104,7 @@ useEffect(() => {
                             </div>
                     </div>
                     <div className='flex flex-col gap-1 px-2'>
-                        <p className='font-bold text-lg mt-2  tracking-wide'>$100</p>
+                        <p className='font-bold text-lg mt-2  tracking-wide'>${prodData?.price}</p>
                         <div className='flex flex-row items-center  space-x-2'>
                             <ReactStars
                                 count={5}
@@ -129,7 +136,7 @@ useEffect(() => {
 
                     </div>
                     <div className='flex flex-col mt-1 gap-1 px-2'>
-                        <p className='font-semibold text-base mt-2'>Type :<span className='pl-1 text-gray-600'> Mobile phone</span></p>
+                        <p className='font-semibold text-base mt-2'>Type :<span className='pl-1 text-gray-600'> {prodData?.category}</span></p>
                         <p className='font-semibold text-base'>SKU :<span className='pl-1 text-gray-600'> SKU1177GH</span></p>
                         <div className='flex flex-row space-x-2 mt-2 items-center'>
                             <p className='font-semibold text-base'>Size :</p>
@@ -226,13 +233,11 @@ useEffect(() => {
         </div>
         {/* Description Section */}
         <div className='flex  max-w-7xl mx-auto mt-2  pt-2'>
-            <h1 className='font-bold text-xl tracking-wide font-sans  '>Description</h1>
+            <h1 className='font-bold text-xl tracking-wide font-sans '>Description</h1>
         </div>
         <div className=' max-w-7xl mx-auto flex bg-white py-2 px-2 w-full mt-2 rounded-lg '>
-            <p className='font-sans font-normal text-base px-2 py-2 leading-6 text-justify'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, quasi consequatur eum fugiat quibusdam dolores voluptatum praesentium, accusamus dignissimos, 
-                velit dolorem laboriosam amet accusantium alias suscipit illo voluptatibus? Sit, aliquid. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ullam 
-                perferendis doloremque natus libero aperiam rerum autem voluptate, excepturi expedita repudiandae iure beatae nesciunt blanditiis atque quo maiores reiciendis. Natus.
+            <p className='font-sans font-normal text-base px-2 py-2 leading-6 text-justify' dangerouslySetInnerHTML={{ __html : prodData?.description}}>
+               
             </p>
         </div>
         {/* Review Section */}
@@ -342,8 +347,22 @@ useEffect(() => {
             <h1 className='font-bold text-xl tracking-wide font-sans  '>Recommended Products</h1>
         </div>
         <div className='flex rounded-lg max-w-7xl mx-auto mt-3 overflow-x-scroll scrollbar-hide w-full px-4 py-2 bg-white'>
-            <Productcard />
-            <Productcard />
+            {productState && productState?.map((item, index) => {
+                  return(
+                    <>
+                        <Link to={`/product/${item?._id}`}>
+                            <Productcard 
+                                id={item?._id}
+                                brand={item?.brand} 
+                                tittle={item?.tittle} 
+                                rating={item?.totalrating} 
+                                desc={item?.description} 
+                                price={item?.price}
+                                /> 
+                        </Link>
+                    </>
+                    )           
+                    })}
         </div>
       </main>
     </>
