@@ -5,24 +5,24 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import Button from './Button';
 import {  AiOutlineHeart } from "react-icons/ai";
 
-function SpecialProducts() {
+function SpecialProducts({id, brand , quantity, image1, image2, image3, category, tittle , rating, desc, price, sold}) {
   return (
     <div className='w-[360px] md:w-[398px] lg:w-[420px] h-[350px] flex  bg-white rounded-2xl'>
         {/* Left Section */}
         <div className='p-1 flex flex-col relative'>
             <img 
-                src={watch}
+                src={image1 || watch}
                 className="w-[180px] h-[250px] object-contain"
                 alt='productimage'
             />
             <div className='flex flex-row space-x-1 pl-3 '>
                 <img 
-                    src={watch}
+                    src={image2 || watch}
                     className="w-[70px] border  border-black h-[50px] object-contain"
                     alt='productimage'
                 />
                 <img 
-                    src={watch}
+                    src={image3 || watch }
                     className="w-[70px] border  border-black h-[50px] object-contain"
                     alt='productimage'
                 />
@@ -38,16 +38,16 @@ function SpecialProducts() {
         </div>
         {/* Right Section */}
         <div className='flex flex-col px-2 py-4 md:py-8 space-y-2'>
-            <p className='font-medium text-red-800  text-sm '>Harvells</p>
-            <p className='font-bold text-black text-sm'>Harwells Watch collections</p>  
+            <p className='font-medium text-red-800  text-sm '>{brand}</p>
+            <p className='font-bold text-black text-sm'>{tittle}</p>  
             <ReactStars
-                count={5}
+                count={rating}
                 value={4}
                 size={24}
                 activeColor="#ffd700"
                 edit={false}
             />
-            <p className='font-semibold text-red-700 text-lg'>$60.00   <span  className='line-through font-semibold text-gray-500 text-sm'>  $ 75.00</span> </p>
+            <p className='font-semibold text-red-700 text-lg'>${price}   <span  className='line-through font-semibold text-gray-500 text-sm'>  $ {price + 50 }</span> </p>
             <div className=' space-x-2 flex items-center mb-2'>
                 <p className='font-semibold text-black'>743 <span className='font-medium text-gray-500 text-sm'>Days</span></p>
                 <div className='flex flex-row items-center space-x-1'>
@@ -56,9 +56,9 @@ function SpecialProducts() {
                     <p className='px-2 py-1 bg-red-700 text-white text-sm rounded-full flex items-center'>05</p> 
                 </div>
             </div>
-            <p className='text-gray-400 font-medium text-sm'>Products left : <span>5</span></p>
+            <p className='text-gray-400 font-medium text-sm'>Products left : <span>{quantity}</span></p>
             <ProgressBar 
-                completed="5"
+                completed={sold}
                 bgColor='green'
                 isLabelVisible={false}
                 height="15px" 

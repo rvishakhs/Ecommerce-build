@@ -106,15 +106,28 @@ function Home() {
                     </div>
                 </div>
                 <div className='grid grid-cols-2 px-2 gap-3 md:grid-cols-4 lg:grid-cols-6'>
-                    <div className='col-span-2'>
-                        <SpecialProducts />
-                    </div>
-                    <div className='col-span-2'>
-                        <SpecialProducts />
-                    </div>
-                    <div className='col-span-2'>
-                        <SpecialProducts />
-                    </div>
+                    {productsState && productsState?.map((item, index) => {
+                            if(item?.tag === "Special Offers"){
+                                return(
+                                    <div key={index}className='col-span-2'>
+                                        <SpecialProducts 
+                                                id={item?._id}
+                                                brand={item?.brand} 
+                                                tittle={item?.tittle} 
+                                                rating={item?.totalrating} 
+                                                desc={item?.description} 
+                                                price={item?.price}
+                                                category={item?.category}
+                                                quantity={item?.quantity}
+                                                sold={item?.sold}
+                                                image1={item?.image[0]?.url}
+                                                image2={item?.image[1]?.url}
+                                                image3={item?.image[2]?.url}
+                                            />
+                                    </div>
+                                )
+                            }                                     
+                        })}
                 </div>               
             </div>
 
