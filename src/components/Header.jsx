@@ -3,16 +3,18 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import compare from '../images/compare.svg'
 import wishlist from '../images/wishlist.svg'
-import user from '../images/user.svg' 
+import usericon from '../images/user.svg' 
 import cart from '../images/cart.svg'
 import menu from '../images/menu.svg'
+import { useSelector } from 'react-redux';
 
 
 function Header() {
 
 
+const user = useSelector((state) => state?.auth?.user)
+let location = useLocation();
 
-    let location = useLocation();
 
 
   return (
@@ -67,14 +69,20 @@ function Header() {
                 </div>
                 <div className=' space-x-2 flex items-center'>
                     <img
-                        src={user}
+                        src={usericon}
                         alt="compare"
                         className='md:w-8 md:h-8 lg:w-9 lg:h-9 h-5 w-5'
                     />
                     <NavLink to="/login">
-                        <p className='text-left font-sans text-xs md:text-sm text-white'>Log In<br/>
-                        My Account
-                        </p>
+                        {user?                         
+                            <p className='text-left font-sans text-xs md:text-sm text-white'>{user?.firstname}<br/>
+                            Logout
+                            </p>
+                        :
+                            <p className='text-left font-sans text-xs md:text-sm text-white'>Log In<br/>
+                            My Account
+                            </p>
+                        }
                     </NavLink>
                 </div>
                 <div className='flex items-center '>
@@ -108,9 +116,11 @@ function Header() {
                     <span className="text-white me-3 text-sm leading-[18px] font-normal tracking-wider uppercase">Shop Categories</span>
                 </button>
                 <ul className="dropdown-menu bg-slate-700 w-[100%] transform ease-out duration-50">
-                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Action</a></li>
-                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Another action</a></li>
-                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Something else here</a></li>
+                    <li>
+                        <a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Mobile Phones</a> </li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Cameras & Videos</a></li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Smart Television</a></li>
+                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Smart Watches</a></li>
                 </ul>
             </div>
             <div className='flex items-center flex-row gap-x-4'>

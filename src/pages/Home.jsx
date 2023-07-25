@@ -20,7 +20,6 @@ function Home() {
     const blogState = useSelector((state) => state?.blog?.blogs)
     const productsState = useSelector((state) => state?.products?.product)
 
-    console.log(productsState);
 
     const fetchblogposts = () => {
         dispatch(fetchblogs())
