@@ -21,7 +21,7 @@ const getsingleproduct = async(id) => {
 
 // Adding to wishlist
 const addtowishlist = async (productid) => {
-    const response = await axios.put(`${base_url}product/` , productid, config)
+    const response = await axios.put(`${base_url}product/`, {productid},  config)
     if (response.data) {
         return response.data
     }

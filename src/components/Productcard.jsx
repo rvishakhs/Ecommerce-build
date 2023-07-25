@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import watch from "../images/watch1.JPG"
 import watchalt from "../images/watch2.JPG"
 import StarRatings from 'react-star-ratings';
@@ -12,7 +12,12 @@ import { addtowishlist } from '../features/products/producrtSlice';
 function Productcard({grid, id, brand , tittle , rating, desc, price}) {
     const dispatch = useDispatch()
     const location = useLocation()
+    const [onwishlist, setonwishlist]  = useState(false)
 
+    const wishlistClicked = (e, id) => {
+        addwishlist(id)
+        setonwishlist(!onwishlist)
+    }
     
     const addwishlist = (id) => { 
          dispatch(addtowishlist(id))
@@ -54,8 +59,9 @@ function Productcard({grid, id, brand , tittle , rating, desc, price}) {
             {/* Wishlist */}
             <div className='absolute flex items-center top-4 right-3'>
                 <AiOutlineHeart
-                    className={`${grid === 2 ? "w-5 h-5 cursor-pointer hover:scale-105" : "w-6 h-6 cursor-pointer hover:scale-105"} `}
-                    onClick={(e) => addwishlist(id)}
+                    className={`${grid === 2  ? `w-5 h-5 cursor-pointer hover:scale-105 ${onwishlist ?  `text-red-500` : `bg-white`}` : "w-6 h-6 cursor-pointer hover:scale-105"} `}
+                    onClick={(e) => wishlistClicked(e, id) }
+
                     />
             </div>
             <div className='absolute hidden  group-hover:block flex-col space-y-2 top-12 right-3 '>

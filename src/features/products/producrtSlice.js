@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { productService } from './productService'
+import { toast } from 'react-toastify'
 
 // This is an THUNK function when user call the "auth/register" will call the register function defined on the userservice 
 
@@ -22,16 +23,16 @@ export const fetchsingleproduct = createAsyncThunk("product/single", async(prodi
 })
 
 // Add to wishlist Functionality 
-export const addtowishlist = createAsyncThunk("product/wishlist", async( thunkAPI) => {
+export const addtowishlist = createAsyncThunk("product/addwishlist", async(productid, thunkAPI) => {
     try {
-        return await productService.getwishlist()
+        return await productService.addtowishlist(productid)
     } catch (err) {
         return  thunkAPI.rejectWithValue(err)
     }
 })
 
 // fetch wishlist Functionality 
-export const getwishlistprod = createAsyncThunk("/wishlist", async( thunkAPI) => {
+export const getwishlistprod = createAsyncThunk("product/wishlist", async( thunkAPI) => {
     try {
         return await productService.getwishlist()
     } catch (err) {
@@ -77,6 +78,9 @@ export const productsSlice = createSlice({
         state.isError = false;
         state.addtowishlist = action.payload;
         state.message = "Product added to wishlist"
+        if (state.isSucess === true) {
+          toast.success("Product added to wishlist")
+        }
         // This case for adding to wishlist 
       }).addCase(addtowishlist.rejected, (state, action) => {
         state.isLoading = false;
@@ -90,8 +94,7 @@ export const productsSlice = createSlice({
         state.isLoading = false;
         state.isSucess = true;
         state.isError = false;
-        state.addtowishlist = action.payload;
-        state.message = "Product added to wishlist"
+        state.wishlistProd = action.payload;
         // This case for adding to wishlist 
       }).addCase(getwishlistprod.rejected, (state, action) => {
         state.isLoading = false;
@@ -106,7 +109,7 @@ export const productsSlice = createSlice({
         state.isSucess = true;
         state.isError = false;
         state.singleproduct = action.payload;
-        state.message = "Product added to wishlist"
+
         // This case for fetching single product and response generated will be saved into singleproduct in products state 
       }).addCase(fetchsingleproduct.rejected, (state, action) => {
         state.isLoading = false;
