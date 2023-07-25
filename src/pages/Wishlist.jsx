@@ -33,7 +33,7 @@ function Compare() {
                     brand={item?.brand}
                     qty={item?.quantity}
                     rating={item?.totalrating}
-                    img={item?.image[0].url}
+                    img={item?.image[0]?.url}
                   />                  
                 )               
               })}

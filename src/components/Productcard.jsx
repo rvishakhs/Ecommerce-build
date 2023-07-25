@@ -3,24 +3,38 @@ import watch from "../images/watch1.JPG"
 import watchalt from "../images/watch2.JPG"
 import StarRatings from 'react-star-ratings';
 import { MdOutlineCompareArrows } from "react-icons/md";
-import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineEye, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { BsBagPlus } from "react-icons/bs";
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addtowishlist } from '../features/products/producrtSlice';
+import { addtowishlist, getwishlistprod } from '../features/products/producrtSlice';
+import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 function Productcard({grid, id, brand , tittle , rating, desc, price}) {
     const dispatch = useDispatch()
     const location = useLocation()
     const [onwishlist, setonwishlist]  = useState(false)
+    const wishlistproducts = useSelector((state) => state?.products?.wishlistProd?.wishlist)
 
     const wishlistClicked = (e, id) => {
         addwishlist(id)
         setonwishlist(!onwishlist)
+        {!onwishlist? toast.success(`${tittle} added to wishlist`): toast.success(`${tittle} removed from wishlist`)}  
     }
+
+
+    useEffect(()=> {
+        {wishlistproducts?.map((item, index) => {
+            if(item._id == id) {
+                setonwishlist(!onwishlist)
+            }
+        })}
+    },[])
     
     const addwishlist = (id) => { 
          dispatch(addtowishlist(id))
+         dispatch(getwishlistprod())
     }
         return (
             <div className={`${location.pathname === "/store" ? `col-span-${grid}  ${grid === 2 ? "flex flex-col" : "flex flex-row"} relative  group bg-white rounded-xl my-2 ` 
@@ -58,11 +72,19 @@ function Productcard({grid, id, brand , tittle , rating, desc, price}) {
             </div>
             {/* Wishlist */}
             <div className='absolute flex items-center top-4 right-3'>
-                <AiOutlineHeart
-                    className={`${grid === 2  ? `w-5 h-5 cursor-pointer hover:scale-105 ${onwishlist ?  `text-red-500` : `bg-white`}` : "w-6 h-6 cursor-pointer hover:scale-105"} `}
+                {onwishlist? 
+                <AiFillHeart
+                    className={`${grid === 2  ? `w-5 h-5 cursor-pointer hover:scale-105 text-red-600 ` : "w-6 h-6 cursor-pointer text-red-600  hover:scale-105"} `}
                     onClick={(e) => wishlistClicked(e, id) }
+                />
+                :
+                <AiOutlineHeart
+                    className={`${grid === 2  ? `w-5 h-5 cursor-pointer hover:scale-105 ` : "w-6 h-6 cursor-pointer hover:scale-105"} `}
+                    onClick={(e) => wishlistClicked(e, id) }
+                />
 
-                    />
+
+                }
             </div>
             <div className='absolute hidden  group-hover:block flex-col space-y-2 top-12 right-3 '>
                 <MdOutlineCompareArrows className={` ${grid === 2 || grid === 3   ? "w-5 h-5 cursor-pointer hover:scale-105" : "w-6 h-6 cursor-pointer hover:scale-105"}`}/>
