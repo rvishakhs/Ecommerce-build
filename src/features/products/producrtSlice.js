@@ -3,7 +3,6 @@ import { productService } from './productService'
 import { toast } from 'react-toastify'
 
 // This is an THUNK function when user call the "auth/register" will call the register function defined on the userservice 
-
 export const fetchproducts = createAsyncThunk("products/fetch", async(thunkAPI) => {
     try {
         return await productService.getallproducts()
