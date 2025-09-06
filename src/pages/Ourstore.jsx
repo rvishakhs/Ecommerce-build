@@ -258,7 +258,7 @@ function Ourstore() {
                   return(
                       <Productcard 
                         grid={grid}
-                        id={item?.id}
+                        id={item?.product_id}
                         // brand={item?.brand} 
                         tittle={item?.product_name} 
                         // rating={item?.totalrating} 

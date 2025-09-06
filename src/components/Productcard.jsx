@@ -41,7 +41,7 @@ function Productcard({grid, id , tittle, desc, price}) {
             : "w-[250px] h-[330px] group relative gap-3 bg-white rounded-xl my-2"}`}> 
 
             <div className={`${grid === 2 ? "w-[200px] group h-[200px]  py-2" : "w-[250px] group h-[220px]  py-2"}`}>
-                <Link to={`/product/${id}`}>
+                <Link to={`/products/${id}`}>
                     <img 
                         src={ watch }
                         className="w-[250px] group-hover:hidden h-[200px]  rounded-t-xl object-contain"

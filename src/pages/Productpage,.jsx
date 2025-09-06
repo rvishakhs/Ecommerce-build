@@ -33,27 +33,27 @@ function Productpage() {
 
    const dispatch = useDispatch()
    const location = useLocation()
-
 //    For fetching productid from URL 
     const getprodid = location.pathname.split("/")[2]
+    console.log(getprodid)
     const prodData = useSelector((state) => state?.products?.singleproduct)
+    console.log(prodData)
     const productState = useSelector((state) => state?.products?.product)
 // Fetching product data 
+// const getproducts = () => {
+//      dispatch(fetchproducts())
+// }
 
-const getproducts = () => {
-     dispatch(fetchproducts())
-}
-
-const fetchsinproduct = () => {
-    dispatch(fetchsingleproduct(getprodid))
-  }
+// const fetchsinproduct = () => {
+//     dispatch(fetchsingleproduct(getprodid))
+//   }
 
 
 
 useEffect(() => {
-    getproducts()
-    fetchsinproduct()
-}, [getprodid])
+    // Only dispatch the action to fetch the single product
+    dispatch(fetchsingleproduct(getprodid));
+}, [getprodid, dispatch]); // Add dispatch to the dependency array
 
   return (
     <>

@@ -11,9 +11,9 @@ const getallproducts = async() => {
     } 
 } 
 
-// Fucntion to fetch single Product 
+// Function to fetch single Product 
 const getsingleproduct = async(id) => {
-    const response = await axios.get(`${base_url}product/${id}`,);
+    const response = await axios.get(`${base_url}products/${id}`);
     if (response.data) {
         return response.data
     } 
