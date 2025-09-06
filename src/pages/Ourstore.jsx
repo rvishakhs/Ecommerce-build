@@ -10,13 +10,16 @@ import gr1 from "../images/gr2.svg"
 import gr2 from "../images/gr3.svg"
 import gr3 from "../images/gr4.svg"
 import { fetchproducts, getwishlistprod } from '../features/products/producrtSlice';
+import { fetchcategories } from '../features/Categories/CategorySlice';
 import { Link, useLocation } from 'react-router-dom';
+import { use } from 'react';
 
 function Ourstore() {
   const dispatch = useDispatch()
   const location = useLocation()
   const productState = useSelector((state) => state?.products?.product)
-  console.log("Products from Redux store:", productState)
+  const categoryState = useSelector((state) => state?.categories?.categories)
+  console.log("categoryState", categoryState)
 //  const wishlistproducts = useSelector((state) => state?.products?.wishlistProd?.wishlist)
   const [category, setshowcategory] = useState(true)
   const [filter, setfilter] = useState(true)
@@ -29,9 +32,13 @@ function Ourstore() {
      dispatch(fetchproducts())
      dispatch(getwishlistprod())
   }
+  const getCategories = () => {
+    dispatch(fetchcategories())
+  }
   
   useEffect(() => {
-     getproducts()
+    getproducts()
+    getCategories()
   }, [])
   
   return (
@@ -52,14 +59,15 @@ function Ourstore() {
                         onClick={() => setshowcategory(!category)}
                         /> 
                   </div>
+
                   {category && (
                   <div className='py-2' >
                     <ul className='px-2 space-y-2'>
-                      <li className='font-medium  text-sm cursor-pointer tracking-wide'>Smartphones</li>
-                      <li className='font-medium  text-sm cursor-pointer tracking-wide'>Laptops</li>
-                      <li className='font-medium  text-sm cursor-pointer tracking-wide'>Camera </li>
-                      <li className='font-medium  text-sm cursor-pointer tracking-wide'>Television</li>
-                      <li className='font-medium  text-sm cursor-pointer tracking-wide'>Accessories</li>
+                      {categoryState && categoryState?.map((item, index) => {
+                        return (
+                           <li key={index} className='font-medium  text-sm cursor-pointer tracking-wide'>{item.category_name}</li>
+                        )
+                      })}
                     </ul>
                   </div>
                   )}

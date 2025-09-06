@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import compare from '../images/compare.svg'
@@ -7,13 +7,25 @@ import usericon from '../images/user.svg'
 import cart from '../images/cart.svg'
 import menu from '../images/menu.svg'
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { fetchcategories } from '../features/Categories/CategorySlice';
+
 
 
 function Header() {
 
-
+const dispatch = useDispatch()
 const user = useSelector((state) => state?.auth?.user)
+const categoryState = useSelector((state) => state?.categories?.categories)
 let location = useLocation();
+
+const getCategories = () => {
+dispatch(fetchcategories())
+}
+
+useEffect(() => {
+getCategories()
+}, [])
 
 
 
@@ -115,13 +127,17 @@ let location = useLocation();
                         className="h-6 w-6"                    />    
                     <span className="text-white me-3 text-sm leading-[18px] font-normal tracking-wider uppercase">Shop Categories</span>
                 </button>
-                <ul className="dropdown-menu bg-slate-700 w-[100%] transform ease-out duration-50">
-                    <li>
-                        <a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Mobile Phones</a> </li>
-                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Cameras & Videos</a></li>
-                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Smart Television</a></li>
-                    <li><a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href="https://github.com/jsx-eslint/eslint-plugin-jsx.com">Smart Watches</a></li>
-                </ul>
+
+                    <ul className='dropdown-menu bg-slate-700 w-[100%] transform ease-out duration-50'>
+                      {categoryState && categoryState?.map((item, index) => {
+                        return (
+                           <li key={index}>
+                            <a className="dropdown-item  text-white p-3 mb-1 !border-b-2 !border-[#3b4149] hover:bg-transparent hover:!text-[#febd69]" href={`/${item.slug}`}>{item.category_name}</a> 
+                           </li>
+                        )
+                      })}
+                    </ul>
+
             </div>
             <div className='flex items-center flex-row gap-x-4'>
                 <NavLink className="text-white text-sm leading-[18px] font-normal tracking-wider uppercase" to='/'>Home</NavLink>

@@ -69,8 +69,8 @@ function Home() {
                                     <Productcard 
                                             id={item?._id}
                                             brand={item?.brand} 
-                                            tittle={item?.tittle} 
-                                            rating={item?.totalrating} 
+                                            tittle={item?.product_name} 
+                                            // rating={item?.totalrating} 
                                             desc={item?.description} 
                                             price={item?.price}
                                         />
