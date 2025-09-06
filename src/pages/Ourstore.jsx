@@ -16,7 +16,8 @@ function Ourstore() {
   const dispatch = useDispatch()
   const location = useLocation()
   const productState = useSelector((state) => state?.products?.product)
-  const wishlistproducts = useSelector((state) => state?.products?.wishlistProd?.wishlist)
+  console.log("Products from Redux store:", productState)
+//  const wishlistproducts = useSelector((state) => state?.products?.wishlistProd?.wishlist)
   const [category, setshowcategory] = useState(true)
   const [filter, setfilter] = useState(true)
   const [Producttags, setproductstags] = useState(false)
@@ -179,14 +180,15 @@ function Ourstore() {
                         {productState && productState?.map((item, index)=> {
                           return (
                             <>
-                            <Link to={`/product/${item?._id}`}>
-                              <RandomProducts
+                            <Link to={``}>
+                              {/* <RandomProducts
                                 id={item.id}
-                                tittle={item?.tittle}
+                                tittle={item?.product_name}
                                 ratings={item?.rating}
                                 price={item?.price}
                                 img={item?.image[0]?.url}
-                              />
+
+                              /> */}
                             </Link>
                             </>
                           )
@@ -248,10 +250,10 @@ function Ourstore() {
                   return(
                       <Productcard 
                         grid={grid}
-                        id={item?._id}
-                        brand={item?.brand} 
-                        tittle={item?.tittle} 
-                        rating={item?.totalrating} 
+                        id={item?.id}
+                        // brand={item?.brand} 
+                        tittle={item?.product_name} 
+                        // rating={item?.totalrating} 
                         desc={item?.description} 
                         price={item?.price}
                         /> 

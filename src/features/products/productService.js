@@ -5,7 +5,7 @@ import { base_url, config } from "../../uttils/axiosConfig";
 
 // Function for fetching Products 
 const getallproducts = async() => {
-    const response = await axios.get(`${base_url}product`);
+    const response = await axios.get(`${base_url}products`);
     if (response.data) {
         return response.data
     } 

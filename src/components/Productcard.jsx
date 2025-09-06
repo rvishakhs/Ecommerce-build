@@ -11,7 +11,7 @@ import { addtowishlist, getwishlistprod } from '../features/products/producrtSli
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-function Productcard({grid, id, brand , tittle , rating, desc, price}) {
+function Productcard({grid, id , tittle, desc, price}) {
     const dispatch = useDispatch()
     const location = useLocation()
     const [onwishlist, setonwishlist]  = useState(false)
@@ -55,18 +55,18 @@ function Productcard({grid, id, brand , tittle , rating, desc, price}) {
                 </Link>    
                 </div>
             <div className={`${location.pathname === "/store" ? `max-w-[70%] pt-4 ${grid === 2 ? "px-2 py-2" : "pr-8  py-2"}` : "space-y-1 px-3"} `}>
-                <p className='font-medium text-red-800 text-sm '>{brand}</p>
+                {/* <p className='font-medium text-red-800 text-sm '>{brand}</p> */}
                 <Link to={`/product/${id}`}>
                     <p className='font-bold text-black text-sm'>{tittle}</p>            
                 </Link>
-                <StarRatings
+                {/* <StarRatings
                     rating={rating}
                     starRatedColor="yellow"
                     numberOfStars={5}
                     name='rating'
                     starDimension="18px"
                     starSpacing="2px"
-                    />     
+                    />      */}
                 <p className={`font-normal text-sm text-gray-500 text-justify py-2 ${grid === 10 ? "block" : "hidden"}`} dangerouslySetInnerHTML={{ __html : desc}}></p>       
                 <p className='font-bold text-gray-500 '>{`$ ${price}`}</p>
             </div>
